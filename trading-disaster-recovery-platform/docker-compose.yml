@@ -1,0 +1,52 @@
+# Reference local paper/sandbox topology for PostgreSQL WAL archiving, object storage, and DR controller.
+# Credentials are injected via environment variables outside source control (never commit real secrets).
+version: "3.9"
+
+services:
+  postgres-primary:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${DR_PG_USER:-dr_paper}
+      POSTGRES_PASSWORD: ${DR_PG_PASSWORD:?set DR_PG_PASSWORD in local env}
+      POSTGRES_DB: trading_dr
+    command:
+      - "postgres"
+      - "-c"
+      - "config_file=/etc/postgresql/postgres_wal.conf"
+    volumes:
+      - ./config/postgres_wal.conf:/etc/postgresql/postgres_wal.conf:ro
+      - pg_primary_data:/var/lib/postgresql/data
+      - wal_archive:/var/lib/postgresql/wal_archive
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DR_PG_USER:-dr_paper} -d trading_dr"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  object-store:
+    image: minio/minio:RELEASE.2024-01-16T16-07-38Z
+    environment:
+      MINIO_ROOT_USER: ${DR_OBJ_USER:-dr_minio}
+      MINIO_ROOT_PASSWORD: ${DR_OBJ_PASSWORD:?set DR_OBJ_PASSWORD in local env}
+    command: server /data --console-address ":9001"
+    volumes:
+      - object_store_data:/data
+
+  dr-controller:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      DR_EXECUTION_MODE: "DISABLED"
+    volumes:
+      - ./config:/app/config:ro
+      - ./data/fixtures:/app/data/fixtures:ro
+      - wal_archive:/var/lib/dr/wal_archive
+    depends_on:
+      postgres-primary:
+        condition: service_healthy
+
+volumes:
+  pg_primary_data:
+  wal_archive:
+  object_store_data:

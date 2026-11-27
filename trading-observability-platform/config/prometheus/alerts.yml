@@ -1,0 +1,116 @@
+groups:
+  - name: trading_health_and_execution
+    interval: 5s
+    rules:
+      - alert: StaleMarketData
+        expr: max(trading_market_data_age_seconds) > 2 or increase(trading_market_data_sequence_gaps_total[1m]) > 0
+        for: 5s
+        labels:
+          severity: P1_CRITICAL
+          service: market_data
+        annotations:
+          summary: "Market data feed stale or sequence gap detected"
+          runbook_url: "docs/runbooks.md#stale-market-data"
+
+      - alert: OmsQueueLagHigh
+        expr: histogram_quantile(0.95, sum(rate(trading_oms_queue_lag_seconds_bucket[1m])) by (le)) > 0.15
+        for: 15s
+        labels:
+          severity: P2_HIGH
+          service: oms
+        annotations:
+          summary: "OMS queue lag p95 exceeds proposed 150ms sandbox threshold"
+          runbook_url: "docs/runbooks.md#oms-queue-lag"
+
+      - alert: BrokerLatencyDegraded
+        expr: histogram_quantile(0.95, sum(rate(trading_broker_ack_latency_seconds_bucket[1m])) by (le)) > 0.25
+        for: 15s
+        labels:
+          severity: P2_HIGH
+          service: broker
+        annotations:
+          summary: "Broker ack latency p95 exceeds proposed 250ms sandbox threshold"
+          runbook_url: "docs/runbooks.md#broker-latency-degraded"
+
+      - alert: OrderRejectSpike
+        expr: (sum(rate(trading_orders_total{service="oms",status="rejected"}[5m])) / clamp_min(sum(rate(trading_orders_total{service="oms"}[5m])), 1)) > 0.25
+        for: 30s
+        labels:
+          severity: P2_HIGH
+          service: oms
+        annotations:
+          summary: "Order reject ratio exceeds 25% rolling threshold"
+          runbook_url: "docs/runbooks.md#order-reject-spike"
+
+      - alert: ReconciliationDrift
+        expr: increase(trading_reconciliation_mismatches_total[5m]) > 0
+        for: 0s
+        labels:
+          severity: P1_CRITICAL
+          service: portfolio
+        annotations:
+          summary: "Broker-portfolio reconciliation drift detected"
+          runbook_url: "docs/runbooks.md#reconciliation-drift"
+
+      - alert: RiskStateBreach
+        expr: max(trading_risk_state_code) >= 1
+        for: 0s
+        labels:
+          severity: P1_CRITICAL
+          service: risk
+        annotations:
+          summary: "Risk engine state degraded or kill-switch engaged"
+          runbook_url: "docs/runbooks.md#risk-state-breach"
+
+  - name: observability_self_health
+    interval: 5s
+    rules:
+      - alert: CardinalityBudgetExceeded
+        expr: (observability_active_series_total / 512) > 0.8 or increase(observability_cardinality_overflow_total[5m]) > 0
+        for: 10s
+        labels:
+          severity: P2_HIGH
+          service: observability
+        annotations:
+          summary: "Metrics cardinality approaching budget or overflow active"
+          runbook_url: "docs/runbooks.md#cardinality-budget-exceeded"
+
+      - alert: SensitiveFieldLeakAttempt
+        expr: increase(observability_sensitive_field_leak_blocked_total[5m]) > 0
+        for: 0s
+        labels:
+          severity: P2_HIGH
+          service: observability
+        annotations:
+          summary: "Redaction firewall intercepted sensitive/confidential telemetry field"
+          runbook_url: "docs/runbooks.md#sensitive-field-leak-attempt"
+
+      - alert: DelayedTraceIngestion
+        expr: histogram_quantile(0.99, sum(rate(observability_trace_ingest_delay_seconds_bucket[5m])) by (le)) > 5
+        for: 30s
+        labels:
+          severity: P3_WARNING
+          service: observability
+        annotations:
+          summary: "Trace ingestion delay exceeds 5s threshold"
+          runbook_url: "docs/runbooks.md#delayed-trace-ingestion"
+
+      - alert: TelemetryBackendUnavailable
+        expr: min(observability_backend_healthy) < 1
+        for: 5s
+        labels:
+          severity: P1_CRITICAL
+          service: observability
+        annotations:
+          summary: "Telemetry storage backend unavailable; local spool active"
+          runbook_url: "docs/runbooks.md#telemetry-backend-unavailable"
+
+      - alert: MonitoringHeartbeatMissing
+        expr: max(observability_watchdog_heartbeat_age_seconds) > 10 or absent(observability_active_series_total)
+        for: 10s
+        labels:
+          severity: P1_CRITICAL
+          service: observability
+        annotations:
+          summary: "Dead-man's-switch triggered: monitoring telemetry heartbeat missing"
+          runbook_url: "docs/runbooks.md#monitoring-heartbeat-missing"

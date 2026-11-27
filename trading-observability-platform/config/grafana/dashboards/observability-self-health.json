@@ -1,0 +1,55 @@
+{
+  "uid": "saat-observability-self-health",
+  "title": "Observability Pipeline Self-Health, Cardinality & Security Redaction",
+  "schemaVersion": 39,
+  "version": 1,
+  "editable": true,
+  "tags": ["observability", "meta-monitoring", "security"],
+  "time": {"from": "now-1h", "to": "now"},
+  "panels": [
+    {
+      "id": 1,
+      "title": "Active Metric Series vs Cap (512)",
+      "type": "gauge",
+      "gridPos": {"h": 8, "w": 8, "x": 0, "y": 0},
+      "targets": [{"expr": "observability_active_series_total", "legendFormat": "active_series"}]
+    },
+    {
+      "id": 2,
+      "title": "Cardinality Overflows & Forbidden Label Rejections",
+      "type": "timeseries",
+      "gridPos": {"h": 8, "w": 8, "x": 8, "y": 0},
+      "targets": [
+        {"expr": "sum(increase(observability_cardinality_overflow_total[5m]))", "legendFormat": "overflows"},
+        {"expr": "sum(increase(observability_forbidden_label_rejected_total[5m]))", "legendFormat": "forbidden_rejects"}
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Telemetry Backend Health & Spool Depth",
+      "type": "stat",
+      "gridPos": {"h": 8, "w": 8, "x": 16, "y": 0},
+      "targets": [
+        {"expr": "min(observability_backend_healthy)", "legendFormat": "backend_healthy"},
+        {"expr": "sum(observability_spool_depth)", "legendFormat": "spool_depth"}
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Sensitive Fields Blocked by Redaction Firewall",
+      "type": "timeseries",
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 8},
+      "targets": [{"expr": "sum by (service) (increase(observability_sensitive_field_leak_blocked_total[5m]))", "legendFormat": "{{service}}"}]
+    },
+    {
+      "id": 5,
+      "title": "Trace Ingestion Delay (p99) & Watchdog Heartbeat Age",
+      "type": "timeseries",
+      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 8},
+      "targets": [
+        {"expr": "histogram_quantile(0.99, sum(rate(observability_trace_ingest_delay_seconds_bucket[5m])) by (le))", "legendFormat": "trace_ingest_delay_p99"},
+        {"expr": "max(observability_watchdog_heartbeat_age_seconds)", "legendFormat": "max_heartbeat_age"}
+      ]
+    }
+  ]
+}

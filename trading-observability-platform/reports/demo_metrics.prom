@@ -1,0 +1,195 @@
+# HELP observability_active_series_total Current total number of active time series in the bounded registry.
+# TYPE observability_active_series_total gauge
+observability_active_series_total 31.0
+# HELP observability_backend_healthy 1 if telemetry backend is healthy, 0 if unavailable.
+# TYPE observability_backend_healthy gauge
+observability_backend_healthy{backend="trace_store"} 1.0
+# HELP observability_cardinality_overflow_total Total label values folded into __overflow__ due to cardinality bounds.
+# TYPE observability_cardinality_overflow_total counter
+# HELP observability_forbidden_label_rejected_total Total metric emissions rejected for using forbidden high-cardinality label keys.
+# TYPE observability_forbidden_label_rejected_total counter
+# HELP observability_sensitive_field_leak_blocked_total Count of sensitive or confidential fields scrubbed before telemetry emission.
+# TYPE observability_sensitive_field_leak_blocked_total counter
+# HELP observability_spool_depth Number of telemetry events buffered in local resilient spool.
+# TYPE observability_spool_depth gauge
+observability_spool_depth{backend="trace_store"} 0.0
+# HELP observability_trace_ingest_delay_seconds Delay between span end timestamp and trace store ingestion timestamp.
+# TYPE observability_trace_ingest_delay_seconds histogram
+observability_trace_ingest_delay_seconds_bucket{service="broker",le="0.001"} 10
+observability_trace_ingest_delay_seconds_bucket{service="broker",le="0.005"} 10
+observability_trace_ingest_delay_seconds_bucket{service="broker",le="0.01"} 10
+observability_trace_ingest_delay_seconds_bucket{service="broker",le="0.025"} 10
+observability_trace_ingest_delay_seconds_bucket{service="broker",le="0.05"} 10
+observability_trace_ingest_delay_seconds_bucket{service="broker",le="0.1"} 10
+observability_trace_ingest_delay_seconds_bucket{service="broker",le="0.25"} 10
+observability_trace_ingest_delay_seconds_bucket{service="broker",le="0.5"} 10
+observability_trace_ingest_delay_seconds_bucket{service="broker",le="1.0"} 10
+observability_trace_ingest_delay_seconds_bucket{service="broker",le="2.5"} 10
+observability_trace_ingest_delay_seconds_bucket{service="broker",le="5.0"} 10
+observability_trace_ingest_delay_seconds_bucket{service="broker",le="10.0"} 10
+observability_trace_ingest_delay_seconds_bucket{service="broker",le="+Inf"} 10
+observability_trace_ingest_delay_seconds_sum{service="broker"} 0.0
+observability_trace_ingest_delay_seconds_count{service="broker"} 10
+observability_trace_ingest_delay_seconds_bucket{service="market_data",le="0.001"} 10
+observability_trace_ingest_delay_seconds_bucket{service="market_data",le="0.005"} 10
+observability_trace_ingest_delay_seconds_bucket{service="market_data",le="0.01"} 10
+observability_trace_ingest_delay_seconds_bucket{service="market_data",le="0.025"} 10
+observability_trace_ingest_delay_seconds_bucket{service="market_data",le="0.05"} 10
+observability_trace_ingest_delay_seconds_bucket{service="market_data",le="0.1"} 10
+observability_trace_ingest_delay_seconds_bucket{service="market_data",le="0.25"} 10
+observability_trace_ingest_delay_seconds_bucket{service="market_data",le="0.5"} 10
+observability_trace_ingest_delay_seconds_bucket{service="market_data",le="1.0"} 10
+observability_trace_ingest_delay_seconds_bucket{service="market_data",le="2.5"} 10
+observability_trace_ingest_delay_seconds_bucket{service="market_data",le="5.0"} 10
+observability_trace_ingest_delay_seconds_bucket{service="market_data",le="10.0"} 10
+observability_trace_ingest_delay_seconds_bucket{service="market_data",le="+Inf"} 10
+observability_trace_ingest_delay_seconds_sum{service="market_data"} 0.0
+observability_trace_ingest_delay_seconds_count{service="market_data"} 10
+observability_trace_ingest_delay_seconds_bucket{service="oms",le="0.001"} 10
+observability_trace_ingest_delay_seconds_bucket{service="oms",le="0.005"} 10
+observability_trace_ingest_delay_seconds_bucket{service="oms",le="0.01"} 10
+observability_trace_ingest_delay_seconds_bucket{service="oms",le="0.025"} 10
+observability_trace_ingest_delay_seconds_bucket{service="oms",le="0.05"} 10
+observability_trace_ingest_delay_seconds_bucket{service="oms",le="0.1"} 10
+observability_trace_ingest_delay_seconds_bucket{service="oms",le="0.25"} 10
+observability_trace_ingest_delay_seconds_bucket{service="oms",le="0.5"} 10
+observability_trace_ingest_delay_seconds_bucket{service="oms",le="1.0"} 10
+observability_trace_ingest_delay_seconds_bucket{service="oms",le="2.5"} 10
+observability_trace_ingest_delay_seconds_bucket{service="oms",le="5.0"} 10
+observability_trace_ingest_delay_seconds_bucket{service="oms",le="10.0"} 10
+observability_trace_ingest_delay_seconds_bucket{service="oms",le="+Inf"} 10
+observability_trace_ingest_delay_seconds_sum{service="oms"} 0.0
+observability_trace_ingest_delay_seconds_count{service="oms"} 10
+observability_trace_ingest_delay_seconds_bucket{service="portfolio",le="0.001"} 10
+observability_trace_ingest_delay_seconds_bucket{service="portfolio",le="0.005"} 10
+observability_trace_ingest_delay_seconds_bucket{service="portfolio",le="0.01"} 10
+observability_trace_ingest_delay_seconds_bucket{service="portfolio",le="0.025"} 10
+observability_trace_ingest_delay_seconds_bucket{service="portfolio",le="0.05"} 10
+observability_trace_ingest_delay_seconds_bucket{service="portfolio",le="0.1"} 10
+observability_trace_ingest_delay_seconds_bucket{service="portfolio",le="0.25"} 10
+observability_trace_ingest_delay_seconds_bucket{service="portfolio",le="0.5"} 10
+observability_trace_ingest_delay_seconds_bucket{service="portfolio",le="1.0"} 10
+observability_trace_ingest_delay_seconds_bucket{service="portfolio",le="2.5"} 10
+observability_trace_ingest_delay_seconds_bucket{service="portfolio",le="5.0"} 10
+observability_trace_ingest_delay_seconds_bucket{service="portfolio",le="10.0"} 10
+observability_trace_ingest_delay_seconds_bucket{service="portfolio",le="+Inf"} 10
+observability_trace_ingest_delay_seconds_sum{service="portfolio"} 0.0
+observability_trace_ingest_delay_seconds_count{service="portfolio"} 10
+observability_trace_ingest_delay_seconds_bucket{service="research",le="0.001"} 10
+observability_trace_ingest_delay_seconds_bucket{service="research",le="0.005"} 10
+observability_trace_ingest_delay_seconds_bucket{service="research",le="0.01"} 10
+observability_trace_ingest_delay_seconds_bucket{service="research",le="0.025"} 10
+observability_trace_ingest_delay_seconds_bucket{service="research",le="0.05"} 10
+observability_trace_ingest_delay_seconds_bucket{service="research",le="0.1"} 10
+observability_trace_ingest_delay_seconds_bucket{service="research",le="0.25"} 10
+observability_trace_ingest_delay_seconds_bucket{service="research",le="0.5"} 10
+observability_trace_ingest_delay_seconds_bucket{service="research",le="1.0"} 10
+observability_trace_ingest_delay_seconds_bucket{service="research",le="2.5"} 10
+observability_trace_ingest_delay_seconds_bucket{service="research",le="5.0"} 10
+observability_trace_ingest_delay_seconds_bucket{service="research",le="10.0"} 10
+observability_trace_ingest_delay_seconds_bucket{service="research",le="+Inf"} 10
+observability_trace_ingest_delay_seconds_sum{service="research"} 0.0
+observability_trace_ingest_delay_seconds_count{service="research"} 10
+observability_trace_ingest_delay_seconds_bucket{service="risk",le="0.001"} 10
+observability_trace_ingest_delay_seconds_bucket{service="risk",le="0.005"} 10
+observability_trace_ingest_delay_seconds_bucket{service="risk",le="0.01"} 10
+observability_trace_ingest_delay_seconds_bucket{service="risk",le="0.025"} 10
+observability_trace_ingest_delay_seconds_bucket{service="risk",le="0.05"} 10
+observability_trace_ingest_delay_seconds_bucket{service="risk",le="0.1"} 10
+observability_trace_ingest_delay_seconds_bucket{service="risk",le="0.25"} 10
+observability_trace_ingest_delay_seconds_bucket{service="risk",le="0.5"} 10
+observability_trace_ingest_delay_seconds_bucket{service="risk",le="1.0"} 10
+observability_trace_ingest_delay_seconds_bucket{service="risk",le="2.5"} 10
+observability_trace_ingest_delay_seconds_bucket{service="risk",le="5.0"} 10
+observability_trace_ingest_delay_seconds_bucket{service="risk",le="10.0"} 10
+observability_trace_ingest_delay_seconds_bucket{service="risk",le="+Inf"} 10
+observability_trace_ingest_delay_seconds_sum{service="risk"} 0.0
+observability_trace_ingest_delay_seconds_count{service="risk"} 10
+# HELP observability_watchdog_heartbeat_age_seconds Age in seconds since last collector heartbeat observed by watchdog.
+# TYPE observability_watchdog_heartbeat_age_seconds gauge
+observability_watchdog_heartbeat_age_seconds{service="broker"} 0.0006201267242431641
+observability_watchdog_heartbeat_age_seconds{service="market_data"} 0.0018301010131835938
+observability_watchdog_heartbeat_age_seconds{service="oms"} 0.0009081363677978516
+observability_watchdog_heartbeat_age_seconds{service="portfolio"} 0.00032019615173339844
+observability_watchdog_heartbeat_age_seconds{service="research"} 0.0015141963958740234
+observability_watchdog_heartbeat_age_seconds{service="risk"} 0.0012080669403076172
+# HELP trading_alerts_deduplicated_total Total duplicate alert evaluations suppressed within cooldown window.
+# TYPE trading_alerts_deduplicated_total counter
+# HELP trading_alerts_fired_total Total alerts fired by severity and status.
+# TYPE trading_alerts_fired_total counter
+# HELP trading_broker_ack_latency_seconds Paper broker acknowledgment and fill latency.
+# TYPE trading_broker_ack_latency_seconds histogram
+trading_broker_ack_latency_seconds_bucket{status="filled",venue="PAPER_BROKER_1",le="0.001"} 0
+trading_broker_ack_latency_seconds_bucket{status="filled",venue="PAPER_BROKER_1",le="0.005"} 1
+trading_broker_ack_latency_seconds_bucket{status="filled",venue="PAPER_BROKER_1",le="0.01"} 8
+trading_broker_ack_latency_seconds_bucket{status="filled",venue="PAPER_BROKER_1",le="0.025"} 10
+trading_broker_ack_latency_seconds_bucket{status="filled",venue="PAPER_BROKER_1",le="0.05"} 10
+trading_broker_ack_latency_seconds_bucket{status="filled",venue="PAPER_BROKER_1",le="0.1"} 10
+trading_broker_ack_latency_seconds_bucket{status="filled",venue="PAPER_BROKER_1",le="0.25"} 10
+trading_broker_ack_latency_seconds_bucket{status="filled",venue="PAPER_BROKER_1",le="0.5"} 10
+trading_broker_ack_latency_seconds_bucket{status="filled",venue="PAPER_BROKER_1",le="1.0"} 10
+trading_broker_ack_latency_seconds_bucket{status="filled",venue="PAPER_BROKER_1",le="2.5"} 10
+trading_broker_ack_latency_seconds_bucket{status="filled",venue="PAPER_BROKER_1",le="5.0"} 10
+trading_broker_ack_latency_seconds_bucket{status="filled",venue="PAPER_BROKER_1",le="10.0"} 10
+trading_broker_ack_latency_seconds_bucket{status="filled",venue="PAPER_BROKER_1",le="+Inf"} 10
+trading_broker_ack_latency_seconds_sum{status="filled",venue="PAPER_BROKER_1"} 0.088555
+trading_broker_ack_latency_seconds_count{status="filled",venue="PAPER_BROKER_1"} 10
+# HELP trading_market_data_age_seconds Age in seconds of most recent market data tick per venue.
+# TYPE trading_market_data_age_seconds gauge
+trading_market_data_age_seconds{venue="SYNTH_EXCH_A"} 0.016000256
+trading_market_data_age_seconds{venue="SYNTH_EXCH_B"} 0.009999872
+# HELP trading_market_data_sequence_gaps_total Detected market data sequence gaps per venue.
+# TYPE trading_market_data_sequence_gaps_total counter
+# HELP trading_market_data_ticks_total Total market data ticks processed by venue and status.
+# TYPE trading_market_data_ticks_total counter
+trading_market_data_ticks_total{status="ok",symbol="SYN-EQ-01",venue="SYNTH_EXCH_A"} 2.0
+trading_market_data_ticks_total{status="ok",symbol="SYN-EQ-02",venue="SYNTH_EXCH_A"} 2.0
+trading_market_data_ticks_total{status="ok",symbol="SYN-EQ-03",venue="SYNTH_EXCH_B"} 2.0
+trading_market_data_ticks_total{status="ok",symbol="SYN-FUT-01",venue="SYNTH_EXCH_A"} 2.0
+trading_market_data_ticks_total{status="ok",symbol="SYN-FX-01",venue="SYNTH_EXCH_B"} 2.0
+# HELP trading_oms_queue_lag_seconds Order wait time in OMS queue before dispatch.
+# TYPE trading_oms_queue_lag_seconds histogram
+trading_oms_queue_lag_seconds_bucket{service="oms",le="0.001"} 0
+trading_oms_queue_lag_seconds_bucket{service="oms",le="0.005"} 10
+trading_oms_queue_lag_seconds_bucket{service="oms",le="0.01"} 10
+trading_oms_queue_lag_seconds_bucket{service="oms",le="0.025"} 10
+trading_oms_queue_lag_seconds_bucket{service="oms",le="0.05"} 10
+trading_oms_queue_lag_seconds_bucket{service="oms",le="0.1"} 10
+trading_oms_queue_lag_seconds_bucket{service="oms",le="0.25"} 10
+trading_oms_queue_lag_seconds_bucket{service="oms",le="0.5"} 10
+trading_oms_queue_lag_seconds_bucket{service="oms",le="1.0"} 10
+trading_oms_queue_lag_seconds_bucket{service="oms",le="2.5"} 10
+trading_oms_queue_lag_seconds_bucket{service="oms",le="5.0"} 10
+trading_oms_queue_lag_seconds_bucket{service="oms",le="10.0"} 10
+trading_oms_queue_lag_seconds_bucket{service="oms",le="+Inf"} 10
+trading_oms_queue_lag_seconds_sum{service="oms"} 0.035
+trading_oms_queue_lag_seconds_count{service="oms"} 10
+# HELP trading_orders_total Total paper orders processed by service, symbol, and terminal status.
+# TYPE trading_orders_total counter
+trading_orders_total{service="oms",status="filled",symbol="SYN-EQ-01"} 2.0
+trading_orders_total{service="oms",status="filled",symbol="SYN-EQ-02"} 2.0
+trading_orders_total{service="oms",status="filled",symbol="SYN-EQ-03"} 2.0
+trading_orders_total{service="oms",status="filled",symbol="SYN-FUT-01"} 2.0
+trading_orders_total{service="oms",status="filled",symbol="SYN-FX-01"} 2.0
+# HELP trading_pipeline_end_to_end_latency_seconds End-to-end paper trade pipeline latency from tick to portfolio update.
+# TYPE trading_pipeline_end_to_end_latency_seconds histogram
+trading_pipeline_end_to_end_latency_seconds_bucket{status="filled",le="0.001"} 0
+trading_pipeline_end_to_end_latency_seconds_bucket{status="filled",le="0.005"} 0
+trading_pipeline_end_to_end_latency_seconds_bucket{status="filled",le="0.01"} 0
+trading_pipeline_end_to_end_latency_seconds_bucket{status="filled",le="0.025"} 8
+trading_pipeline_end_to_end_latency_seconds_bucket{status="filled",le="0.05"} 10
+trading_pipeline_end_to_end_latency_seconds_bucket{status="filled",le="0.1"} 10
+trading_pipeline_end_to_end_latency_seconds_bucket{status="filled",le="0.25"} 10
+trading_pipeline_end_to_end_latency_seconds_bucket{status="filled",le="0.5"} 10
+trading_pipeline_end_to_end_latency_seconds_bucket{status="filled",le="1.0"} 10
+trading_pipeline_end_to_end_latency_seconds_bucket{status="filled",le="2.5"} 10
+trading_pipeline_end_to_end_latency_seconds_bucket{status="filled",le="5.0"} 10
+trading_pipeline_end_to_end_latency_seconds_bucket{status="filled",le="10.0"} 10
+trading_pipeline_end_to_end_latency_seconds_bucket{status="filled",le="+Inf"} 10
+trading_pipeline_end_to_end_latency_seconds_sum{status="filled"} 0.19255499999999998
+trading_pipeline_end_to_end_latency_seconds_count{status="filled"} 10
+# HELP trading_reconciliation_mismatches_total Total reconciliation mismatches detected between broker and portfolio state.
+# TYPE trading_reconciliation_mismatches_total counter
+# HELP trading_risk_state_code Risk state indicator: 0=HEALTHY, 1=DEGRADED, 2=BREACHED/KILL_SWITCH.
+# TYPE trading_risk_state_code gauge
+trading_risk_state_code{service="risk"} 0.0

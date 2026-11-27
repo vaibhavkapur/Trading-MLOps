@@ -1,0 +1,90 @@
+{
+  "config_version": "1.0.0",
+  "environment": "local-paper-sandbox",
+  "execution_policy": {
+    "mode": "DISABLED",
+    "paper_sandbox_policy_id": "POL-PAPER-OBS-001",
+    "paper_sandbox_approved_by": "trading-engineering-review",
+    "paper_sandbox_review_date_utc": "2026-11-27T00:00:00Z",
+    "allow_live_execution": false
+  },
+  "telemetry": {
+    "schema_version": "1.0.0",
+    "service_namespace": "saat.trading",
+    "max_series_per_metric": 64,
+    "max_total_series": 512,
+    "allowed_services": [
+      "market_data",
+      "research",
+      "risk",
+      "oms",
+      "broker",
+      "portfolio",
+      "observability"
+    ],
+    "allowed_venues": [
+      "SYNTH_EXCH_A",
+      "SYNTH_EXCH_B",
+      "PAPER_BROKER_1",
+      "UNKNOWN"
+    ],
+    "allowed_symbols": [
+      "SYN-EQ-01",
+      "SYN-EQ-02",
+      "SYN-EQ-03",
+      "SYN-FX-01",
+      "SYN-FUT-01"
+    ],
+    "allowed_statuses": [
+      "ok",
+      "accepted",
+      "filled",
+      "rejected",
+      "timeout",
+      "stale",
+      "degraded",
+      "error",
+      "breached",
+      "reconciled",
+      "mismatch",
+      "unknown"
+    ],
+    "forbidden_metric_labels": [
+      "order_id",
+      "client_order_id",
+      "trace_id",
+      "span_id",
+      "correlation_id",
+      "account_id",
+      "client_account",
+      "api_key",
+      "token",
+      "user_id",
+      "timestamp"
+    ],
+    "trace_retention_seconds": 86400,
+    "trace_max_spans": 50000,
+    "trace_ingest_delay_threshold_seconds": 5.0,
+    "backend_spool_max_events": 1000,
+    "heartbeat_timeout_seconds": 10.0
+  },
+  "alerting": {
+    "dedup_cooldown_seconds": 60.0,
+    "stale_market_data_seconds": 2.0,
+    "oms_queue_lag_ms": 150.0,
+    "broker_latency_ms": 250.0,
+    "order_reject_rate_ratio": 0.25,
+    "min_orders_for_reject_rate": 4,
+    "cardinality_utilization_warn_ratio": 0.8,
+    "routes": {
+      "P1_CRITICAL": ["pager_primary", "trading_ops_slack", "incident_log"],
+      "P2_HIGH": ["trading_ops_slack", "incident_log"],
+      "P3_WARNING": ["observability_digest", "incident_log"]
+    }
+  },
+  "security": {
+    "default_viewer_role": "VIEWER",
+    "require_redaction_in_all_logs": true,
+    "authorized_auditor_tokens_env": "TRADING_OBS_AUDITOR_TOKEN"
+  }
+}

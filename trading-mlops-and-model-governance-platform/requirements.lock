@@ -1,0 +1,4 @@
+# Reproducible dependency lock for Trading MLOps and Model Governance Platform
+# Core runtime uses Python >=3.9 standard library only (zero mandatory external runtime packages).
+# Optional adapters (postgres, mlflow) and dev tools (pytest, ruff) are declared in pyproject.toml.
+python>=3.9

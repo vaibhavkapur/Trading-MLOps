@@ -1,4 +1,7 @@
+.DS_Store
+.venv/
 __pycache__/
 *.py[cod]
-var/
-.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/

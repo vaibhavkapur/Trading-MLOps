@@ -1,0 +1,208 @@
+{
+  "active_alerts": [],
+  "environment": "local-paper-sandbox",
+  "execution_mode": "PAPER_SANDBOX",
+  "generated_at_utc": "2026-11-27T10:15:13.828167Z",
+  "latency_ms": {
+    "broker_ack": {
+      "max_ms": 17.338,
+      "p50_ms": 7.708,
+      "p95_ms": 16.614,
+      "p99_ms": 17.193,
+      "sample_count": 10
+    },
+    "end_to_end": {
+      "max_ms": 27.738,
+      "p50_ms": 18.108,
+      "p95_ms": 27.014,
+      "p99_ms": 27.593,
+      "sample_count": 10
+    },
+    "measurement_type": "MEASURED_LOCAL_SYNTHETIC_BASELINE",
+    "oms_queue_lag": {
+      "max_ms": 3.5,
+      "p50_ms": 3.5,
+      "p95_ms": 3.5,
+      "p99_ms": 3.5,
+      "sample_count": 10
+    }
+  },
+  "observability_self_health": {
+    "alerts_deduplicated": 0,
+    "cardinality": {
+      "forbidden_label_rejections": 0,
+      "max_series_per_metric": 64,
+      "max_total_series": 512,
+      "overflow_events": 0,
+      "per_metric_series": {
+        "observability_active_series_total": 1,
+        "observability_backend_healthy": 1,
+        "observability_cardinality_overflow_total": 0,
+        "observability_forbidden_label_rejected_total": 0,
+        "observability_sensitive_field_leak_blocked_total": 0,
+        "observability_spool_depth": 1,
+        "observability_trace_ingest_delay_seconds": 6,
+        "observability_watchdog_heartbeat_age_seconds": 6,
+        "trading_alerts_deduplicated_total": 0,
+        "trading_alerts_fired_total": 0,
+        "trading_broker_ack_latency_seconds": 1,
+        "trading_market_data_age_seconds": 2,
+        "trading_market_data_sequence_gaps_total": 0,
+        "trading_market_data_ticks_total": 5,
+        "trading_oms_queue_lag_seconds": 1,
+        "trading_orders_total": 5,
+        "trading_pipeline_end_to_end_latency_seconds": 1,
+        "trading_reconciliation_mismatches_total": 0,
+        "trading_risk_state_code": 1
+      },
+      "total_series": 31,
+      "utilization_ratio": 0.0605
+    },
+    "sensitive_fields_blocked": 0,
+    "trace_backend_available": true,
+    "trace_delayed_spans": 0,
+    "trace_ingest_delay_seconds": {
+      "count": 60.0,
+      "max": 0.0,
+      "p50": 0.0,
+      "p95": 0.0,
+      "p99": 0.0
+    },
+    "trace_spool_depth": 0,
+    "trace_total_spans": 60
+  },
+  "recent_traces": [
+    {
+      "delayed_spans": 0,
+      "duration_ms": 18.55,
+      "order_id": "ORD-000007",
+      "span_count": 6,
+      "trace_id": "97dc7036cb4b2c1bc79d03c66874db30"
+    },
+    {
+      "delayed_spans": 0,
+      "duration_ms": 7.474,
+      "order_id": "ORD-000010",
+      "span_count": 6,
+      "trace_id": "6370cd441f72dd843a988f4523f8bece"
+    },
+    {
+      "delayed_spans": 0,
+      "duration_ms": 16.892,
+      "order_id": "ORD-000004",
+      "span_count": 6,
+      "trace_id": "e355f87b7c63646083936b971f025724"
+    },
+    {
+      "delayed_spans": 0,
+      "duration_ms": 8.97,
+      "order_id": "ORD-000008",
+      "span_count": 6,
+      "trace_id": "1fbbee3b4fc613c8daa0b345b8e70278"
+    },
+    {
+      "delayed_spans": 0,
+      "duration_ms": 6.384,
+      "order_id": "ORD-000009",
+      "span_count": 6,
+      "trace_id": "1e1b5e5bdbfc825b15afb726fc719ee7"
+    },
+    {
+      "delayed_spans": 0,
+      "duration_ms": 10.763,
+      "order_id": "ORD-000006",
+      "span_count": 6,
+      "trace_id": "7b2a22ce2817a389db8a5a213db28e06"
+    },
+    {
+      "delayed_spans": 0,
+      "duration_ms": 7.544,
+      "order_id": "ORD-000005",
+      "span_count": 6,
+      "trace_id": "7fcb609455ae3d7d8a2b324453ad78e3"
+    },
+    {
+      "delayed_spans": 0,
+      "duration_ms": 9.447,
+      "order_id": "ORD-000003",
+      "span_count": 6,
+      "trace_id": "a9e0e57ecad3cb59d121feff708f308a"
+    },
+    {
+      "delayed_spans": 0,
+      "duration_ms": 8.877,
+      "order_id": "ORD-000002",
+      "span_count": 6,
+      "trace_id": "9418bf67950749b5d4422fa76a27f65a"
+    },
+    {
+      "delayed_spans": 0,
+      "duration_ms": 6.058,
+      "order_id": "ORD-000001",
+      "span_count": 6,
+      "trace_id": "a00fb6e53b4b64cc1b3f150253c2a655"
+    }
+  ],
+  "sli_evaluations": [
+    {
+      "id": "sli_market_data_freshness",
+      "measured_value": 0.016,
+      "target_status": "PROPOSED",
+      "threshold": 2.0,
+      "unit": "seconds",
+      "within_proposed_threshold": true
+    },
+    {
+      "id": "sli_oms_queue_latency",
+      "measured_value": 3.5,
+      "target_status": "PROPOSED",
+      "threshold": 150.0,
+      "unit": "ms (p99)",
+      "within_proposed_threshold": true
+    },
+    {
+      "id": "sli_broker_ack_latency",
+      "measured_value": 16.614,
+      "target_status": "PROPOSED",
+      "threshold": 250.0,
+      "unit": "ms (p95)",
+      "within_proposed_threshold": true
+    },
+    {
+      "id": "sli_order_reject_ratio",
+      "measured_value": 0.0,
+      "target_status": "PROPOSED",
+      "threshold": 0.25,
+      "unit": "ratio",
+      "within_proposed_threshold": true
+    },
+    {
+      "id": "sli_reconciliation_accuracy",
+      "measured_value": 0,
+      "target_status": "PROPOSED",
+      "threshold": 0,
+      "unit": "mismatches",
+      "within_proposed_threshold": true
+    },
+    {
+      "id": "sli_trace_correlation_completeness",
+      "measured_value": 0.0,
+      "target_status": "PROPOSED",
+      "threshold": 5.0,
+      "unit": "seconds (max ingest delay)",
+      "within_proposed_threshold": true
+    }
+  ],
+  "slo_disclaimer": "All SLO targets below are PROPOSED engineering hypotheses for local/sandbox calibration, NOT contractual SLAs or assertions of production performance. Establish measured environment baselines before ratifying production targets.",
+  "trading_health": {
+    "active_alerts_count": 0,
+    "market_data_max_age_seconds": 0.016,
+    "market_data_ticks_total": 10,
+    "order_reject_ratio": 0.0,
+    "orders_filled": 10,
+    "orders_rejected": 0,
+    "orders_total": 10,
+    "reconciliation_mismatches": 0,
+    "risk_state": "HEALTHY"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "manifest_version": "1.0.0",
+  "dataset_id": "synthetic-paper-trading-fixture-v1",
+  "provenance": "100% deterministically generated synthetic market ticks and paper orders; zero real market vendor data, zero live client data, zero PII.",
+  "license_and_entitlement": "Internal synthetic test fixture; unrestricted for local development, CI, and sandbox validation.",
+  "seed": 20261127,
+  "created_utc": "2026-11-27T00:00:00Z",
+  "symbols": [
+    {"symbol": "SYN-EQ-01", "asset_class": "synthetic_equity", "currency": "USD", "base_price": 100.00},
+    {"symbol": "SYN-EQ-02", "asset_class": "synthetic_equity", "currency": "USD", "base_price": 245.50},
+    {"symbol": "SYN-EQ-03", "asset_class": "synthetic_equity", "currency": "USD", "base_price": 52.25},
+    {"symbol": "SYN-FX-01", "asset_class": "synthetic_fx", "currency": "USD", "base_price": 1.0850},
+    {"symbol": "SYN-FUT-01", "asset_class": "synthetic_future", "currency": "USD", "base_price": 4520.00}
+  ],
+  "files": [
+    {
+      "path": "data/fixtures/synthetic_ticks.jsonl",
+      "description": "Deterministic synthetic market ticks with UTC event and availability timestamps and monotonic sequence IDs",
+      "record_count": 10
+    }
+  ]
+}

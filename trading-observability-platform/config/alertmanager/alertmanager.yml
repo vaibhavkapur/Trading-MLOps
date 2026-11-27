@@ -1,0 +1,46 @@
+global:
+  resolve_timeout: 5m
+
+route:
+  group_by: ["alertname", "service", "severity"]
+  group_wait: 10s
+  group_interval: 60s
+  repeat_interval: 1h
+  receiver: incident_log
+  routes:
+    - matchers:
+        - severity="P1_CRITICAL"
+      receiver: pager_primary
+      continue: true
+    - matchers:
+        - severity=~"P1_CRITICAL|P2_HIGH"
+      receiver: trading_ops_slack
+    - matchers:
+        - severity="P3_WARNING"
+      receiver: observability_digest
+
+inhibit_rules:
+  - source_matchers:
+      - alertname="TelemetryBackendUnavailable"
+    target_matchers:
+      - alertname="DelayedTraceIngestion"
+    equal: ["service"]
+
+receivers:
+  # Credentials/webhooks must be supplied via external secret store or env substitution; never committed.
+  - name: pager_primary
+    webhook_configs:
+      - url: "http://localhost:9999/pager-placeholder"
+        send_resolved: true
+  - name: trading_ops_slack
+    webhook_configs:
+      - url: "http://localhost:9999/slack-placeholder"
+        send_resolved: true
+  - name: observability_digest
+    webhook_configs:
+      - url: "http://localhost:9999/digest-placeholder"
+        send_resolved: true
+  - name: incident_log
+    webhook_configs:
+      - url: "http://localhost:9999/incident-log-placeholder"
+        send_resolved: true

@@ -1,0 +1,66 @@
+{
+  "fixtures": {
+    "market_features_drifted.json": {
+      "asset_class": "SYNTHETIC_US_EQUITIES",
+      "content_sha256": "80096a63ee4dc21576347c3e71c4153c7bdcbcf1eda13438f477ad30a2c2fee5",
+      "currency": "USD",
+      "dataset_id": "syn_alpha_bars_drifted",
+      "description": "Synthetic shifted serving batch for M4 PSI and mean-shift drift detection drills.",
+      "end_event_ts_utc": "2025-07-15T18:00:00Z",
+      "entitlement": "INTERNAL_SYNTHETIC_SANDBOX",
+      "is_synthetic": true,
+      "license_name": "CC0-1.0-Synthetic",
+      "row_count": 60,
+      "schema_hash": "08905f9f0254c9ce7bb5577c47aaf9ac5170a3d50d0350d723b0442a62cc965a",
+      "start_event_ts_utc": "2025-07-01T00:00:00Z",
+      "version": "1.0.0"
+    },
+    "market_features_leaked.json": {
+      "asset_class": "SYNTHETIC_US_EQUITIES",
+      "content_sha256": "66326eb2777add9dd303a6b06f3e185f1017f828ca022e30e09670425bfbf6c7",
+      "currency": "USD",
+      "dataset_id": "syn_alpha_bars_leaked",
+      "description": "Fault-injection fixture with point-in-time availability_ts_utc < event_ts_utc leakage.",
+      "end_event_ts_utc": "2025-02-09T18:00:00Z",
+      "entitlement": "INTERNAL_SYNTHETIC_SANDBOX",
+      "is_synthetic": true,
+      "license_name": "CC0-1.0-Synthetic",
+      "row_count": 160,
+      "schema_hash": "08905f9f0254c9ce7bb5577c47aaf9ac5170a3d50d0350d723b0442a62cc965a",
+      "start_event_ts_utc": "2025-01-01T00:00:00Z",
+      "version": "1.0.0"
+    },
+    "market_features_v1.json": {
+      "asset_class": "SYNTHETIC_US_EQUITIES",
+      "content_sha256": "9007ef62477726c96145fe7b85ea79dda38caf4debb962e21c9311e9b2442676",
+      "currency": "USD",
+      "dataset_id": "syn_alpha_bars_v1",
+      "description": "Clean synthetic 150-day chronological multi-regime equity bar dataset for v1 training.",
+      "end_event_ts_utc": "2025-05-30T18:00:00Z",
+      "entitlement": "INTERNAL_SYNTHETIC_SANDBOX",
+      "is_synthetic": true,
+      "license_name": "CC0-1.0-Synthetic",
+      "row_count": 600,
+      "schema_hash": "08905f9f0254c9ce7bb5577c47aaf9ac5170a3d50d0350d723b0442a62cc965a",
+      "start_event_ts_utc": "2025-01-01T00:00:00Z",
+      "version": "1.0.0"
+    },
+    "market_features_v2.json": {
+      "asset_class": "SYNTHETIC_US_EQUITIES",
+      "content_sha256": "0754c7a87c5f9b0e25a289029b55a786182f24cfaab9e328553d204ad4fe59e9",
+      "currency": "USD",
+      "dataset_id": "syn_alpha_bars_v2",
+      "description": "Clean synthetic 150-day chronological dataset for v2 candidate training.",
+      "end_event_ts_utc": "2025-10-28T18:00:00Z",
+      "entitlement": "INTERNAL_SYNTHETIC_SANDBOX",
+      "is_synthetic": true,
+      "license_name": "CC0-1.0-Synthetic",
+      "row_count": 600,
+      "schema_hash": "08905f9f0254c9ce7bb5577c47aaf9ac5170a3d50d0350d723b0442a62cc965a",
+      "start_event_ts_utc": "2025-06-01T00:00:00Z",
+      "version": "1.1.0"
+    }
+  },
+  "generator": "scripts/generate_fixtures.py",
+  "manifest_version": "1.0.0"
+}

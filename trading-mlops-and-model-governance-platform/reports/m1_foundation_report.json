@@ -1,0 +1,38 @@
+{
+  "audit_chain": {
+    "event_count": 8,
+    "head_hash": "953b3194f84de28de8df63e48dddf8a6cbc6be47cb134be1330e106a34d4fbc8",
+    "verified": true
+  },
+  "config_version": "1.0.0",
+  "milestone": "M1",
+  "order_execution_enabled_default": false,
+  "registered_datasets": [
+    "syn_alpha_bars_v1@1.0.0+9007ef62477726c9",
+    "syn_alpha_bars_v2@1.1.0+0754c7a87c5f9b0e",
+    "syn_alpha_bars_leaked@1.0.0+66326eb2777add9d"
+  ],
+  "registered_feature_sets": [
+    "eq_micro_alpha_fs@1.0.0+1451304a7f743a53",
+    "eq_micro_alpha_fs@2.0.0+670c7945b5182649"
+  ],
+  "roles_defined": [
+    "RESEARCHER",
+    "VALIDATOR",
+    "RISK_APPROVER",
+    "RELEASE_OPERATOR",
+    "COMPLIANCE_OFFICER",
+    "GOVERNANCE_AUDITOR"
+  ],
+  "stages_defined": [
+    "REGISTERED",
+    "VALIDATED",
+    "SHADOW",
+    "PAPER",
+    "LIVE_GATED",
+    "ROLLED_BACK",
+    "REJECTED",
+    "ARCHIVED"
+  ],
+  "status": "PASSED"
+}

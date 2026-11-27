@@ -1,0 +1,2092 @@
+{
+  "asset_class": "SYNTHETIC_US_EQUITIES",
+  "currency": "USD",
+  "dataset_id": "syn_alpha_bars_leaked",
+  "description": "Fault-injection fixture with point-in-time availability_ts_utc < event_ts_utc leakage.",
+  "entitlement": "INTERNAL_SYNTHETIC_SANDBOX",
+  "is_synthetic": true,
+  "license_name": "CC0-1.0-Synthetic",
+  "records": [
+    {
+      "availability_ts_utc": "2025-01-01T00:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-01T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.290308,
+        "momentum_24h_bps": -0.715503,
+        "order_book_imbalance": 0.200763,
+        "realized_vol_24h_bps": 18.976368
+      },
+      "forward_return_bps": 18.359387
+    },
+    {
+      "availability_ts_utc": "2025-01-01T06:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-01T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.038067,
+        "momentum_24h_bps": -0.111524,
+        "order_book_imbalance": 0.488143,
+        "realized_vol_24h_bps": 17.577216
+      },
+      "forward_return_bps": 21.026668
+    },
+    {
+      "availability_ts_utc": "2025-01-01T12:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-01T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.033002,
+        "momentum_24h_bps": -5.765857,
+        "order_book_imbalance": 0.39723,
+        "realized_vol_24h_bps": 18.826081
+      },
+      "forward_return_bps": 2.703127
+    },
+    {
+      "availability_ts_utc": "2025-01-01T18:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-01T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.906603,
+        "momentum_24h_bps": 1.058962,
+        "order_book_imbalance": 0.050359,
+        "realized_vol_24h_bps": 19.456302
+      },
+      "forward_return_bps": 6.634633
+    },
+    {
+      "availability_ts_utc": "2025-01-02T00:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-02T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.214851,
+        "momentum_24h_bps": -0.669396,
+        "order_book_imbalance": -0.108863,
+        "realized_vol_24h_bps": 19.028114
+      },
+      "forward_return_bps": 19.485674
+    },
+    {
+      "availability_ts_utc": "2025-01-02T06:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-02T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.231517,
+        "momentum_24h_bps": 9.073185,
+        "order_book_imbalance": 0.172921,
+        "realized_vol_24h_bps": 17.0847
+      },
+      "forward_return_bps": -15.562023
+    },
+    {
+      "availability_ts_utc": "2025-01-02T12:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-02T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.422019,
+        "momentum_24h_bps": 11.834665,
+        "order_book_imbalance": 0.778959,
+        "realized_vol_24h_bps": 18.663629
+      },
+      "forward_return_bps": 47.395501
+    },
+    {
+      "availability_ts_utc": "2025-01-02T18:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-02T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.192836,
+        "momentum_24h_bps": 9.43953,
+        "order_book_imbalance": 0.807474,
+        "realized_vol_24h_bps": 21.591885
+      },
+      "forward_return_bps": 16.507969
+    },
+    {
+      "availability_ts_utc": "2025-01-03T00:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-03T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.19302,
+        "momentum_24h_bps": 6.170908,
+        "order_book_imbalance": 0.669622,
+        "realized_vol_24h_bps": 22.205873
+      },
+      "forward_return_bps": 35.185032
+    },
+    {
+      "availability_ts_utc": "2025-01-03T06:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-03T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.527634,
+        "momentum_24h_bps": 11.840542,
+        "order_book_imbalance": 0.468805,
+        "realized_vol_24h_bps": 22.591741
+      },
+      "forward_return_bps": 9.916257
+    },
+    {
+      "availability_ts_utc": "2025-01-03T12:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-03T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.848378,
+        "momentum_24h_bps": 1.598569,
+        "order_book_imbalance": 0.401621,
+        "realized_vol_24h_bps": 24.025428
+      },
+      "forward_return_bps": -2.634498
+    },
+    {
+      "availability_ts_utc": "2025-01-03T18:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-03T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.642412,
+        "momentum_24h_bps": 17.133479,
+        "order_book_imbalance": 0.781968,
+        "realized_vol_24h_bps": 24.13779
+      },
+      "forward_return_bps": 11.733402
+    },
+    {
+      "availability_ts_utc": "2025-01-04T00:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-04T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.784188,
+        "momentum_24h_bps": 14.715532,
+        "order_book_imbalance": 0.252804,
+        "realized_vol_24h_bps": 24.353806
+      },
+      "forward_return_bps": 5.039613
+    },
+    {
+      "availability_ts_utc": "2025-01-04T06:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-04T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.674052,
+        "momentum_24h_bps": 21.914209,
+        "order_book_imbalance": 0.477595,
+        "realized_vol_24h_bps": 24.684215
+      },
+      "forward_return_bps": 16.889862
+    },
+    {
+      "availability_ts_utc": "2025-01-04T12:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-04T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.661332,
+        "momentum_24h_bps": 10.477384,
+        "order_book_imbalance": 0.076459,
+        "realized_vol_24h_bps": 24.751813
+      },
+      "forward_return_bps": 7.462454
+    },
+    {
+      "availability_ts_utc": "2025-01-04T18:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-04T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.189996,
+        "momentum_24h_bps": 5.901111,
+        "order_book_imbalance": 0.342462,
+        "realized_vol_24h_bps": 23.250891
+      },
+      "forward_return_bps": 3.510963
+    },
+    {
+      "availability_ts_utc": "2025-01-05T00:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-05T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.036227,
+        "momentum_24h_bps": 8.398309,
+        "order_book_imbalance": 0.971823,
+        "realized_vol_24h_bps": 22.342015
+      },
+      "forward_return_bps": 20.24357
+    },
+    {
+      "availability_ts_utc": "2025-01-05T06:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-05T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 1.900468,
+        "momentum_24h_bps": 3.764608,
+        "order_book_imbalance": 0.598282,
+        "realized_vol_24h_bps": 25.62058
+      },
+      "forward_return_bps": 27.783208
+    },
+    {
+      "availability_ts_utc": "2025-01-05T12:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-05T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 1.654698,
+        "momentum_24h_bps": 4.329893,
+        "order_book_imbalance": 1.108099,
+        "realized_vol_24h_bps": 23.582285
+      },
+      "forward_return_bps": 2.983455
+    },
+    {
+      "availability_ts_utc": "2025-01-05T18:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-05T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.189654,
+        "momentum_24h_bps": 5.029846,
+        "order_book_imbalance": 0.986456,
+        "realized_vol_24h_bps": 24.779611
+      },
+      "forward_return_bps": 18.095232
+    },
+    {
+      "availability_ts_utc": "2025-01-06T00:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-06T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.146351,
+        "momentum_24h_bps": 2.582851,
+        "order_book_imbalance": 1.403794,
+        "realized_vol_24h_bps": 26.258422
+      },
+      "forward_return_bps": 5.426508
+    },
+    {
+      "availability_ts_utc": "2025-01-06T06:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-06T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.402754,
+        "momentum_24h_bps": -5.243751,
+        "order_book_imbalance": 0.773787,
+        "realized_vol_24h_bps": 25.117473
+      },
+      "forward_return_bps": -11.199724
+    },
+    {
+      "availability_ts_utc": "2025-01-06T12:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-06T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.97097,
+        "momentum_24h_bps": 1.294782,
+        "order_book_imbalance": 0.897312,
+        "realized_vol_24h_bps": 27.417051
+      },
+      "forward_return_bps": 15.922064
+    },
+    {
+      "availability_ts_utc": "2025-01-06T18:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-06T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.740595,
+        "momentum_24h_bps": -1.110896,
+        "order_book_imbalance": 0.408253,
+        "realized_vol_24h_bps": 26.811412
+      },
+      "forward_return_bps": -11.303447
+    },
+    {
+      "availability_ts_utc": "2025-01-07T00:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-07T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.691027,
+        "momentum_24h_bps": 2.776365,
+        "order_book_imbalance": -0.020498,
+        "realized_vol_24h_bps": 27.264071
+      },
+      "forward_return_bps": -5.18504
+    },
+    {
+      "availability_ts_utc": "2025-01-07T05:50:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-07T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.823889,
+        "momentum_24h_bps": 7.977799,
+        "order_book_imbalance": -0.558564,
+        "realized_vol_24h_bps": 25.919772
+      },
+      "forward_return_bps": -15.81468
+    },
+    {
+      "availability_ts_utc": "2025-01-07T12:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-07T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.401225,
+        "momentum_24h_bps": 13.062458,
+        "order_book_imbalance": -0.278592,
+        "realized_vol_24h_bps": 27.524867
+      },
+      "forward_return_bps": 7.493696
+    },
+    {
+      "availability_ts_utc": "2025-01-07T18:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-07T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.995977,
+        "momentum_24h_bps": 24.555813,
+        "order_book_imbalance": -0.40057,
+        "realized_vol_24h_bps": 25.114748
+      },
+      "forward_return_bps": -15.799394
+    },
+    {
+      "availability_ts_utc": "2025-01-08T00:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-08T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.029683,
+        "momentum_24h_bps": 29.166058,
+        "order_book_imbalance": -1.116145,
+        "realized_vol_24h_bps": 24.380612
+      },
+      "forward_return_bps": 14.774849
+    },
+    {
+      "availability_ts_utc": "2025-01-08T06:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-08T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.783263,
+        "momentum_24h_bps": 19.222727,
+        "order_book_imbalance": -1.054232,
+        "realized_vol_24h_bps": 25.316705
+      },
+      "forward_return_bps": -4.913265
+    },
+    {
+      "availability_ts_utc": "2025-01-08T12:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-08T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.105386,
+        "momentum_24h_bps": 17.299369,
+        "order_book_imbalance": -0.101855,
+        "realized_vol_24h_bps": 23.962017
+      },
+      "forward_return_bps": 7.81657
+    },
+    {
+      "availability_ts_utc": "2025-01-08T18:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-08T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.750491,
+        "momentum_24h_bps": 18.855721,
+        "order_book_imbalance": -0.432526,
+        "realized_vol_24h_bps": 24.820375
+      },
+      "forward_return_bps": 18.387466
+    },
+    {
+      "availability_ts_utc": "2025-01-09T00:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-09T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.014491,
+        "momentum_24h_bps": 28.717297,
+        "order_book_imbalance": -0.670911,
+        "realized_vol_24h_bps": 21.222608
+      },
+      "forward_return_bps": 10.11609
+    },
+    {
+      "availability_ts_utc": "2025-01-09T06:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-09T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.712375,
+        "momentum_24h_bps": 14.896437,
+        "order_book_imbalance": -0.206055,
+        "realized_vol_24h_bps": 22.082765
+      },
+      "forward_return_bps": 20.046835
+    },
+    {
+      "availability_ts_utc": "2025-01-09T12:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-09T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.01379,
+        "momentum_24h_bps": 12.739918,
+        "order_book_imbalance": 0.284569,
+        "realized_vol_24h_bps": 19.911643
+      },
+      "forward_return_bps": 14.641455
+    },
+    {
+      "availability_ts_utc": "2025-01-09T18:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-09T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.9718,
+        "momentum_24h_bps": 10.148647,
+        "order_book_imbalance": 0.41091,
+        "realized_vol_24h_bps": 20.903082
+      },
+      "forward_return_bps": 25.221283
+    },
+    {
+      "availability_ts_utc": "2025-01-10T00:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-10T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.910334,
+        "momentum_24h_bps": 3.355259,
+        "order_book_imbalance": 0.665452,
+        "realized_vol_24h_bps": 18.727667
+      },
+      "forward_return_bps": 17.009879
+    },
+    {
+      "availability_ts_utc": "2025-01-10T06:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-10T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.818022,
+        "momentum_24h_bps": 6.828353,
+        "order_book_imbalance": -0.043691,
+        "realized_vol_24h_bps": 17.006595
+      },
+      "forward_return_bps": -0.726733
+    },
+    {
+      "availability_ts_utc": "2025-01-10T12:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-10T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.738766,
+        "momentum_24h_bps": -0.974549,
+        "order_book_imbalance": -0.232663,
+        "realized_vol_24h_bps": 18.142176
+      },
+      "forward_return_bps": 0.146565
+    },
+    {
+      "availability_ts_utc": "2025-01-10T18:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-10T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.608,
+        "momentum_24h_bps": -2.949386,
+        "order_book_imbalance": -0.35786,
+        "realized_vol_24h_bps": 19.822065
+      },
+      "forward_return_bps": -14.215568
+    },
+    {
+      "availability_ts_utc": "2025-01-11T00:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-11T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.244304,
+        "momentum_24h_bps": -5.932698,
+        "order_book_imbalance": -0.183575,
+        "realized_vol_24h_bps": 21.051673
+      },
+      "forward_return_bps": -9.416315
+    },
+    {
+      "availability_ts_utc": "2025-01-11T06:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-11T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.784572,
+        "momentum_24h_bps": 7.326193,
+        "order_book_imbalance": 0.119359,
+        "realized_vol_24h_bps": 20.728998
+      },
+      "forward_return_bps": 9.859776
+    },
+    {
+      "availability_ts_utc": "2025-01-11T12:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-11T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.017409,
+        "momentum_24h_bps": 3.49946,
+        "order_book_imbalance": 0.099944,
+        "realized_vol_24h_bps": 21.153672
+      },
+      "forward_return_bps": -0.873829
+    },
+    {
+      "availability_ts_utc": "2025-01-11T18:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-11T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.151893,
+        "momentum_24h_bps": -3.057554,
+        "order_book_imbalance": 0.051513,
+        "realized_vol_24h_bps": 24.224514
+      },
+      "forward_return_bps": 24.368624
+    },
+    {
+      "availability_ts_utc": "2025-01-12T00:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-12T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.61541,
+        "momentum_24h_bps": -3.561483,
+        "order_book_imbalance": 0.302854,
+        "realized_vol_24h_bps": 22.744244
+      },
+      "forward_return_bps": 16.316309
+    },
+    {
+      "availability_ts_utc": "2025-01-12T06:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-12T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.309036,
+        "momentum_24h_bps": -16.552002,
+        "order_book_imbalance": -0.301281,
+        "realized_vol_24h_bps": 18.91828
+      },
+      "forward_return_bps": -5.527664
+    },
+    {
+      "availability_ts_utc": "2025-01-12T12:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-12T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.214997,
+        "momentum_24h_bps": -7.693368,
+        "order_book_imbalance": -0.467516,
+        "realized_vol_24h_bps": 17.348529
+      },
+      "forward_return_bps": 3.560485
+    },
+    {
+      "availability_ts_utc": "2025-01-12T18:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-12T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.663145,
+        "momentum_24h_bps": -13.539222,
+        "order_book_imbalance": -0.452895,
+        "realized_vol_24h_bps": 17.325283
+      },
+      "forward_return_bps": -28.883891
+    },
+    {
+      "availability_ts_utc": "2025-01-13T00:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-13T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.22106,
+        "momentum_24h_bps": -5.808563,
+        "order_book_imbalance": -0.282058,
+        "realized_vol_24h_bps": 16.332369
+      },
+      "forward_return_bps": -3.31951
+    },
+    {
+      "availability_ts_utc": "2025-01-13T06:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-13T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.921336,
+        "momentum_24h_bps": -5.360429,
+        "order_book_imbalance": -0.196248,
+        "realized_vol_24h_bps": 19.655523
+      },
+      "forward_return_bps": -13.369931
+    },
+    {
+      "availability_ts_utc": "2025-01-13T12:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-13T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.880542,
+        "momentum_24h_bps": -2.03367,
+        "order_book_imbalance": 0.589766,
+        "realized_vol_24h_bps": 19.280919
+      },
+      "forward_return_bps": 6.485942
+    },
+    {
+      "availability_ts_utc": "2025-01-13T18:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-13T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.60433,
+        "momentum_24h_bps": 0.588324,
+        "order_book_imbalance": 0.64343,
+        "realized_vol_24h_bps": 21.223313
+      },
+      "forward_return_bps": -0.109857
+    },
+    {
+      "availability_ts_utc": "2025-01-14T00:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-14T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.762838,
+        "momentum_24h_bps": -4.756662,
+        "order_book_imbalance": 0.610654,
+        "realized_vol_24h_bps": 22.941542
+      },
+      "forward_return_bps": 15.673273
+    },
+    {
+      "availability_ts_utc": "2025-01-14T06:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-14T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.665745,
+        "momentum_24h_bps": -11.781641,
+        "order_book_imbalance": -0.215372,
+        "realized_vol_24h_bps": 24.761299
+      },
+      "forward_return_bps": -1.250556
+    },
+    {
+      "availability_ts_utc": "2025-01-14T12:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-14T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.910664,
+        "momentum_24h_bps": -10.124448,
+        "order_book_imbalance": -0.257943,
+        "realized_vol_24h_bps": 25.679189
+      },
+      "forward_return_bps": 28.882683
+    },
+    {
+      "availability_ts_utc": "2025-01-14T18:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-14T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.719202,
+        "momentum_24h_bps": -24.118301,
+        "order_book_imbalance": -0.642577,
+        "realized_vol_24h_bps": 24.818495
+      },
+      "forward_return_bps": -21.240795
+    },
+    {
+      "availability_ts_utc": "2025-01-15T00:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-15T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.910251,
+        "momentum_24h_bps": -18.435119,
+        "order_book_imbalance": -0.60894,
+        "realized_vol_24h_bps": 24.970088
+      },
+      "forward_return_bps": -22.151959
+    },
+    {
+      "availability_ts_utc": "2025-01-15T06:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-15T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.461473,
+        "momentum_24h_bps": -14.515919,
+        "order_book_imbalance": -0.651484,
+        "realized_vol_24h_bps": 25.466679
+      },
+      "forward_return_bps": -0.473888
+    },
+    {
+      "availability_ts_utc": "2025-01-15T12:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-15T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.475523,
+        "momentum_24h_bps": -16.072696,
+        "order_book_imbalance": -1.003133,
+        "realized_vol_24h_bps": 21.852339
+      },
+      "forward_return_bps": -6.876547
+    },
+    {
+      "availability_ts_utc": "2025-01-15T18:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-15T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.210908,
+        "momentum_24h_bps": -14.159527,
+        "order_book_imbalance": -0.634342,
+        "realized_vol_24h_bps": 22.777828
+      },
+      "forward_return_bps": -17.41886
+    },
+    {
+      "availability_ts_utc": "2025-01-16T00:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-16T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.164437,
+        "momentum_24h_bps": -9.413138,
+        "order_book_imbalance": -0.622845,
+        "realized_vol_24h_bps": 21.405352
+      },
+      "forward_return_bps": -2.503934
+    },
+    {
+      "availability_ts_utc": "2025-01-16T06:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-16T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 1.822636,
+        "momentum_24h_bps": -11.609276,
+        "order_book_imbalance": -0.093332,
+        "realized_vol_24h_bps": 21.122895
+      },
+      "forward_return_bps": -7.050338
+    },
+    {
+      "availability_ts_utc": "2025-01-16T12:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-16T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.323205,
+        "momentum_24h_bps": -18.151045,
+        "order_book_imbalance": -0.71631,
+        "realized_vol_24h_bps": 21.832716
+      },
+      "forward_return_bps": -8.90891
+    },
+    {
+      "availability_ts_utc": "2025-01-16T18:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-16T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.922322,
+        "momentum_24h_bps": -19.13867,
+        "order_book_imbalance": -0.636045,
+        "realized_vol_24h_bps": 22.130997
+      },
+      "forward_return_bps": -18.153153
+    },
+    {
+      "availability_ts_utc": "2025-01-17T00:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-17T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.121602,
+        "momentum_24h_bps": -12.874684,
+        "order_book_imbalance": -0.471653,
+        "realized_vol_24h_bps": 21.947671
+      },
+      "forward_return_bps": 6.650571
+    },
+    {
+      "availability_ts_utc": "2025-01-17T06:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-17T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.25894,
+        "momentum_24h_bps": -17.915677,
+        "order_book_imbalance": 0.171098,
+        "realized_vol_24h_bps": 23.011793
+      },
+      "forward_return_bps": -12.912029
+    },
+    {
+      "availability_ts_utc": "2025-01-17T12:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-17T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.43562,
+        "momentum_24h_bps": -9.134531,
+        "order_book_imbalance": 0.30304,
+        "realized_vol_24h_bps": 24.198399
+      },
+      "forward_return_bps": 12.725613
+    },
+    {
+      "availability_ts_utc": "2025-01-17T18:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-17T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.118774,
+        "momentum_24h_bps": -6.063385,
+        "order_book_imbalance": 0.476572,
+        "realized_vol_24h_bps": 28.177321
+      },
+      "forward_return_bps": 14.80042
+    },
+    {
+      "availability_ts_utc": "2025-01-18T00:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-18T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.736405,
+        "momentum_24h_bps": -0.075339,
+        "order_book_imbalance": 0.177523,
+        "realized_vol_24h_bps": 26.745734
+      },
+      "forward_return_bps": 0.397938
+    },
+    {
+      "availability_ts_utc": "2025-01-18T06:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-18T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.645812,
+        "momentum_24h_bps": -6.07303,
+        "order_book_imbalance": -0.212104,
+        "realized_vol_24h_bps": 27.030536
+      },
+      "forward_return_bps": 0.719259
+    },
+    {
+      "availability_ts_utc": "2025-01-18T12:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-18T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.058876,
+        "momentum_24h_bps": -6.964577,
+        "order_book_imbalance": -0.189159,
+        "realized_vol_24h_bps": 26.129135
+      },
+      "forward_return_bps": 17.230204
+    },
+    {
+      "availability_ts_utc": "2025-01-18T18:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-18T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.754338,
+        "momentum_24h_bps": 0.882112,
+        "order_book_imbalance": -0.385358,
+        "realized_vol_24h_bps": 27.162671
+      },
+      "forward_return_bps": 22.028923
+    },
+    {
+      "availability_ts_utc": "2025-01-19T00:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-19T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.581768,
+        "momentum_24h_bps": 10.7565,
+        "order_book_imbalance": 0.007092,
+        "realized_vol_24h_bps": 27.999696
+      },
+      "forward_return_bps": -11.516472
+    },
+    {
+      "availability_ts_utc": "2025-01-19T06:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-19T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.420671,
+        "momentum_24h_bps": 11.192789,
+        "order_book_imbalance": 0.179682,
+        "realized_vol_24h_bps": 27.683159
+      },
+      "forward_return_bps": 14.004541
+    },
+    {
+      "availability_ts_utc": "2025-01-19T12:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-19T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.297434,
+        "momentum_24h_bps": 9.990689,
+        "order_book_imbalance": -0.100821,
+        "realized_vol_24h_bps": 26.398345
+      },
+      "forward_return_bps": 16.276023
+    },
+    {
+      "availability_ts_utc": "2025-01-19T18:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-19T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.330173,
+        "momentum_24h_bps": 8.445442,
+        "order_book_imbalance": 0.018909,
+        "realized_vol_24h_bps": 22.515304
+      },
+      "forward_return_bps": 0.271702
+    },
+    {
+      "availability_ts_utc": "2025-01-20T00:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-20T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.439187,
+        "momentum_24h_bps": 13.825877,
+        "order_book_imbalance": -0.023054,
+        "realized_vol_24h_bps": 23.036797
+      },
+      "forward_return_bps": 6.252815
+    },
+    {
+      "availability_ts_utc": "2025-01-20T06:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-20T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.850575,
+        "momentum_24h_bps": 11.727738,
+        "order_book_imbalance": -0.010328,
+        "realized_vol_24h_bps": 22.29993
+      },
+      "forward_return_bps": 7.70833
+    },
+    {
+      "availability_ts_utc": "2025-01-20T12:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-20T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.702521,
+        "momentum_24h_bps": 14.547985,
+        "order_book_imbalance": 0.476768,
+        "realized_vol_24h_bps": 25.116257
+      },
+      "forward_return_bps": 16.687812
+    },
+    {
+      "availability_ts_utc": "2025-01-20T18:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-20T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.845834,
+        "momentum_24h_bps": 15.339361,
+        "order_book_imbalance": -0.142839,
+        "realized_vol_24h_bps": 21.787648
+      },
+      "forward_return_bps": -3.123528
+    },
+    {
+      "availability_ts_utc": "2025-01-21T00:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-21T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.210509,
+        "momentum_24h_bps": 8.603415,
+        "order_book_imbalance": 0.115726,
+        "realized_vol_24h_bps": 22.338635
+      },
+      "forward_return_bps": 20.64036
+    },
+    {
+      "availability_ts_utc": "2025-01-21T06:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-21T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.68554,
+        "momentum_24h_bps": 10.789072,
+        "order_book_imbalance": -0.498916,
+        "realized_vol_24h_bps": 21.689018
+      },
+      "forward_return_bps": -13.33852
+    },
+    {
+      "availability_ts_utc": "2025-01-21T12:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-21T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.722889,
+        "momentum_24h_bps": 8.589612,
+        "order_book_imbalance": -0.612099,
+        "realized_vol_24h_bps": 19.766298
+      },
+      "forward_return_bps": 18.758372
+    },
+    {
+      "availability_ts_utc": "2025-01-21T18:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-21T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.995797,
+        "momentum_24h_bps": 20.460087,
+        "order_book_imbalance": -0.237011,
+        "realized_vol_24h_bps": 19.18616
+      },
+      "forward_return_bps": -16.003017
+    },
+    {
+      "availability_ts_utc": "2025-01-22T00:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-22T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.635737,
+        "momentum_24h_bps": 23.791716,
+        "order_book_imbalance": -0.427129,
+        "realized_vol_24h_bps": 20.408918
+      },
+      "forward_return_bps": -17.585509
+    },
+    {
+      "availability_ts_utc": "2025-01-22T06:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-22T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.225151,
+        "momentum_24h_bps": 28.071058,
+        "order_book_imbalance": -0.669895,
+        "realized_vol_24h_bps": 19.699187
+      },
+      "forward_return_bps": 30.497262
+    },
+    {
+      "availability_ts_utc": "2025-01-22T12:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-22T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.443505,
+        "momentum_24h_bps": 24.206023,
+        "order_book_imbalance": -0.512946,
+        "realized_vol_24h_bps": 21.165672
+      },
+      "forward_return_bps": 3.411726
+    },
+    {
+      "availability_ts_utc": "2025-01-22T18:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-22T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 1.684406,
+        "momentum_24h_bps": 11.228223,
+        "order_book_imbalance": -0.143468,
+        "realized_vol_24h_bps": 21.804269
+      },
+      "forward_return_bps": 5.188613
+    },
+    {
+      "availability_ts_utc": "2025-01-23T00:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-23T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.394236,
+        "momentum_24h_bps": 10.165962,
+        "order_book_imbalance": 0.333457,
+        "realized_vol_24h_bps": 20.897385
+      },
+      "forward_return_bps": 4.09812
+    },
+    {
+      "availability_ts_utc": "2025-01-23T06:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-23T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.267611,
+        "momentum_24h_bps": 9.753858,
+        "order_book_imbalance": 0.529939,
+        "realized_vol_24h_bps": 20.670157
+      },
+      "forward_return_bps": 31.862993
+    },
+    {
+      "availability_ts_utc": "2025-01-23T12:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-23T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.213645,
+        "momentum_24h_bps": -2.001128,
+        "order_book_imbalance": 0.513603,
+        "realized_vol_24h_bps": 21.053437
+      },
+      "forward_return_bps": 1.687124
+    },
+    {
+      "availability_ts_utc": "2025-01-23T18:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-23T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.56373,
+        "momentum_24h_bps": 10.575213,
+        "order_book_imbalance": 0.319296,
+        "realized_vol_24h_bps": 22.384445
+      },
+      "forward_return_bps": 19.67384
+    },
+    {
+      "availability_ts_utc": "2025-01-24T00:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-24T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.24345,
+        "momentum_24h_bps": 21.121711,
+        "order_book_imbalance": -0.025964,
+        "realized_vol_24h_bps": 19.875357
+      },
+      "forward_return_bps": 22.057768
+    },
+    {
+      "availability_ts_utc": "2025-01-24T06:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-24T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 1.944545,
+        "momentum_24h_bps": 18.540239,
+        "order_book_imbalance": -0.156569,
+        "realized_vol_24h_bps": 21.142291
+      },
+      "forward_return_bps": 10.456374
+    },
+    {
+      "availability_ts_utc": "2025-01-24T12:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-24T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.145617,
+        "momentum_24h_bps": 14.182157,
+        "order_book_imbalance": -0.393019,
+        "realized_vol_24h_bps": 19.725955
+      },
+      "forward_return_bps": -10.355713
+    },
+    {
+      "availability_ts_utc": "2025-01-24T18:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-24T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.965288,
+        "momentum_24h_bps": 20.627307,
+        "order_book_imbalance": -0.404943,
+        "realized_vol_24h_bps": 18.707734
+      },
+      "forward_return_bps": 7.47391
+    },
+    {
+      "availability_ts_utc": "2025-01-25T00:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-25T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.000355,
+        "momentum_24h_bps": 23.786115,
+        "order_book_imbalance": -0.500196,
+        "realized_vol_24h_bps": 19.193767
+      },
+      "forward_return_bps": 5.365727
+    },
+    {
+      "availability_ts_utc": "2025-01-25T06:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-25T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.766352,
+        "momentum_24h_bps": 26.743043,
+        "order_book_imbalance": 0.06842,
+        "realized_vol_24h_bps": 19.52247
+      },
+      "forward_return_bps": 2.197688
+    },
+    {
+      "availability_ts_utc": "2025-01-25T12:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-25T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.554336,
+        "momentum_24h_bps": 25.849498,
+        "order_book_imbalance": -0.21698,
+        "realized_vol_24h_bps": 17.682952
+      },
+      "forward_return_bps": 8.703002
+    },
+    {
+      "availability_ts_utc": "2025-01-25T18:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-25T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.354178,
+        "momentum_24h_bps": 18.805146,
+        "order_book_imbalance": -0.193424,
+        "realized_vol_24h_bps": 19.019041
+      },
+      "forward_return_bps": 25.421335
+    },
+    {
+      "availability_ts_utc": "2025-01-26T00:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-26T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.38876,
+        "momentum_24h_bps": 19.515812,
+        "order_book_imbalance": 0.398593,
+        "realized_vol_24h_bps": 18.976485
+      },
+      "forward_return_bps": 20.624481
+    },
+    {
+      "availability_ts_utc": "2025-01-26T06:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-26T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.824192,
+        "momentum_24h_bps": 15.757907,
+        "order_book_imbalance": 0.245497,
+        "realized_vol_24h_bps": 18.325661
+      },
+      "forward_return_bps": 0.440363
+    },
+    {
+      "availability_ts_utc": "2025-01-26T12:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-26T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.448285,
+        "momentum_24h_bps": 11.327759,
+        "order_book_imbalance": 0.113687,
+        "realized_vol_24h_bps": 19.38673
+      },
+      "forward_return_bps": 6.125764
+    },
+    {
+      "availability_ts_utc": "2025-01-26T18:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-26T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.633653,
+        "momentum_24h_bps": -0.043142,
+        "order_book_imbalance": 0.077013,
+        "realized_vol_24h_bps": 19.447925
+      },
+      "forward_return_bps": 13.007985
+    },
+    {
+      "availability_ts_utc": "2025-01-27T00:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-27T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 4.078337,
+        "momentum_24h_bps": 6.362368,
+        "order_book_imbalance": 0.548688,
+        "realized_vol_24h_bps": 20.012611
+      },
+      "forward_return_bps": -4.653804
+    },
+    {
+      "availability_ts_utc": "2025-01-27T06:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-27T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.792994,
+        "momentum_24h_bps": 9.591515,
+        "order_book_imbalance": 0.503589,
+        "realized_vol_24h_bps": 22.071925
+      },
+      "forward_return_bps": -23.680909
+    },
+    {
+      "availability_ts_utc": "2025-01-27T12:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-27T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.790357,
+        "momentum_24h_bps": 16.812585,
+        "order_book_imbalance": 0.672155,
+        "realized_vol_24h_bps": 20.262757
+      },
+      "forward_return_bps": 22.054494
+    },
+    {
+      "availability_ts_utc": "2025-01-27T18:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-27T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.348126,
+        "momentum_24h_bps": 16.656473,
+        "order_book_imbalance": 0.473152,
+        "realized_vol_24h_bps": 17.922745
+      },
+      "forward_return_bps": -12.174552
+    },
+    {
+      "availability_ts_utc": "2025-01-28T00:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-28T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.236003,
+        "momentum_24h_bps": 10.720837,
+        "order_book_imbalance": 0.707021,
+        "realized_vol_24h_bps": 17.909096
+      },
+      "forward_return_bps": -7.076706
+    },
+    {
+      "availability_ts_utc": "2025-01-28T06:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-28T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.373214,
+        "momentum_24h_bps": 11.547442,
+        "order_book_imbalance": 0.244694,
+        "realized_vol_24h_bps": 18.892845
+      },
+      "forward_return_bps": 41.28903
+    },
+    {
+      "availability_ts_utc": "2025-01-28T12:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-28T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.283538,
+        "momentum_24h_bps": 10.011062,
+        "order_book_imbalance": 0.056592,
+        "realized_vol_24h_bps": 18.575452
+      },
+      "forward_return_bps": -4.415755
+    },
+    {
+      "availability_ts_utc": "2025-01-28T18:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-28T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 1.712723,
+        "momentum_24h_bps": 10.124512,
+        "order_book_imbalance": 0.263603,
+        "realized_vol_24h_bps": 18.620319
+      },
+      "forward_return_bps": 12.928698
+    },
+    {
+      "availability_ts_utc": "2025-01-29T00:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-29T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 1.405732,
+        "momentum_24h_bps": 15.550534,
+        "order_book_imbalance": 0.113827,
+        "realized_vol_24h_bps": 18.492379
+      },
+      "forward_return_bps": 10.197408
+    },
+    {
+      "availability_ts_utc": "2025-01-29T06:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-29T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 1.948966,
+        "momentum_24h_bps": 15.702708,
+        "order_book_imbalance": 0.36818,
+        "realized_vol_24h_bps": 16.8548
+      },
+      "forward_return_bps": -13.912212
+    },
+    {
+      "availability_ts_utc": "2025-01-29T12:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-29T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 1.592469,
+        "momentum_24h_bps": 6.294778,
+        "order_book_imbalance": -0.002436,
+        "realized_vol_24h_bps": 17.85212
+      },
+      "forward_return_bps": -7.072482
+    },
+    {
+      "availability_ts_utc": "2025-01-29T18:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-29T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.447277,
+        "momentum_24h_bps": 6.388766,
+        "order_book_imbalance": 0.013616,
+        "realized_vol_24h_bps": 19.853232
+      },
+      "forward_return_bps": 1.661412
+    },
+    {
+      "availability_ts_utc": "2025-01-30T00:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-30T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.305297,
+        "momentum_24h_bps": 8.432027,
+        "order_book_imbalance": -0.188074,
+        "realized_vol_24h_bps": 17.938472
+      },
+      "forward_return_bps": -11.72237
+    },
+    {
+      "availability_ts_utc": "2025-01-30T06:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-30T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.962887,
+        "momentum_24h_bps": 4.643597,
+        "order_book_imbalance": -0.10286,
+        "realized_vol_24h_bps": 17.214115
+      },
+      "forward_return_bps": -4.59548
+    },
+    {
+      "availability_ts_utc": "2025-01-30T12:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-30T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.982562,
+        "momentum_24h_bps": 1.760881,
+        "order_book_imbalance": 0.424697,
+        "realized_vol_24h_bps": 18.978092
+      },
+      "forward_return_bps": -0.763702
+    },
+    {
+      "availability_ts_utc": "2025-01-30T18:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-30T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.505142,
+        "momentum_24h_bps": 3.814459,
+        "order_book_imbalance": -0.158493,
+        "realized_vol_24h_bps": 17.052697
+      },
+      "forward_return_bps": -4.595465
+    },
+    {
+      "availability_ts_utc": "2025-01-31T00:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-31T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.055894,
+        "momentum_24h_bps": 18.279385,
+        "order_book_imbalance": 0.251969,
+        "realized_vol_24h_bps": 15.653618
+      },
+      "forward_return_bps": 14.190273
+    },
+    {
+      "availability_ts_utc": "2025-01-31T06:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-31T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.01166,
+        "momentum_24h_bps": 15.480373,
+        "order_book_imbalance": 0.225249,
+        "realized_vol_24h_bps": 16.399339
+      },
+      "forward_return_bps": 0.068108
+    },
+    {
+      "availability_ts_utc": "2025-01-31T12:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-31T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.219762,
+        "momentum_24h_bps": 10.367734,
+        "order_book_imbalance": 0.385803,
+        "realized_vol_24h_bps": 17.08206
+      },
+      "forward_return_bps": 0.627989
+    },
+    {
+      "availability_ts_utc": "2025-01-31T18:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-01-31T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.329168,
+        "momentum_24h_bps": 5.143582,
+        "order_book_imbalance": 0.221965,
+        "realized_vol_24h_bps": 15.430715
+      },
+      "forward_return_bps": -12.105429
+    },
+    {
+      "availability_ts_utc": "2025-02-01T00:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-01T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.504802,
+        "momentum_24h_bps": 4.352218,
+        "order_book_imbalance": -0.232566,
+        "realized_vol_24h_bps": 12.54198
+      },
+      "forward_return_bps": -2.176489
+    },
+    {
+      "availability_ts_utc": "2025-02-01T06:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-01T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.072075,
+        "momentum_24h_bps": 8.963311,
+        "order_book_imbalance": -0.12222,
+        "realized_vol_24h_bps": 14.219024
+      },
+      "forward_return_bps": -21.021117
+    },
+    {
+      "availability_ts_utc": "2025-02-01T12:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-01T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.995243,
+        "momentum_24h_bps": -8.579662,
+        "order_book_imbalance": 0.03186,
+        "realized_vol_24h_bps": 11.438121
+      },
+      "forward_return_bps": -4.729066
+    },
+    {
+      "availability_ts_utc": "2025-02-01T18:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-01T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.576837,
+        "momentum_24h_bps": -6.716411,
+        "order_book_imbalance": -0.428558,
+        "realized_vol_24h_bps": 14.318706
+      },
+      "forward_return_bps": -5.8952
+    },
+    {
+      "availability_ts_utc": "2025-02-02T00:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-02T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.757936,
+        "momentum_24h_bps": -5.480514,
+        "order_book_imbalance": -0.68314,
+        "realized_vol_24h_bps": 17.902708
+      },
+      "forward_return_bps": -17.596851
+    },
+    {
+      "availability_ts_utc": "2025-02-02T06:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-02T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.603138,
+        "momentum_24h_bps": -7.272781,
+        "order_book_imbalance": -0.348349,
+        "realized_vol_24h_bps": 18.980525
+      },
+      "forward_return_bps": 8.60295
+    },
+    {
+      "availability_ts_utc": "2025-02-02T12:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-02T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.971158,
+        "momentum_24h_bps": 0.364598,
+        "order_book_imbalance": -0.381487,
+        "realized_vol_24h_bps": 19.745053
+      },
+      "forward_return_bps": 4.550918
+    },
+    {
+      "availability_ts_utc": "2025-02-02T18:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-02T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.126029,
+        "momentum_24h_bps": -4.440126,
+        "order_book_imbalance": -0.962107,
+        "realized_vol_24h_bps": 20.549064
+      },
+      "forward_return_bps": -27.383646
+    },
+    {
+      "availability_ts_utc": "2025-02-03T00:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-03T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.932098,
+        "momentum_24h_bps": -16.134443,
+        "order_book_imbalance": -0.539557,
+        "realized_vol_24h_bps": 19.804556
+      },
+      "forward_return_bps": 0.088711
+    },
+    {
+      "availability_ts_utc": "2025-02-03T06:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-03T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.844116,
+        "momentum_24h_bps": -9.593458,
+        "order_book_imbalance": -0.702379,
+        "realized_vol_24h_bps": 21.196815
+      },
+      "forward_return_bps": -15.200023
+    },
+    {
+      "availability_ts_utc": "2025-02-03T12:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-03T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.169277,
+        "momentum_24h_bps": -2.599254,
+        "order_book_imbalance": -0.935987,
+        "realized_vol_24h_bps": 20.82027
+      },
+      "forward_return_bps": -26.495835
+    },
+    {
+      "availability_ts_utc": "2025-02-03T18:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-03T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.279314,
+        "momentum_24h_bps": -12.95569,
+        "order_book_imbalance": -0.86083,
+        "realized_vol_24h_bps": 20.447885
+      },
+      "forward_return_bps": -34.272015
+    },
+    {
+      "availability_ts_utc": "2025-02-04T00:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-04T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.200396,
+        "momentum_24h_bps": -18.287544,
+        "order_book_imbalance": -0.740166,
+        "realized_vol_24h_bps": 20.581238
+      },
+      "forward_return_bps": -21.981007
+    },
+    {
+      "availability_ts_utc": "2025-02-04T06:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-04T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.122455,
+        "momentum_24h_bps": -25.95598,
+        "order_book_imbalance": -0.932525,
+        "realized_vol_24h_bps": 22.616075
+      },
+      "forward_return_bps": -15.345389
+    },
+    {
+      "availability_ts_utc": "2025-02-04T12:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-04T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.072526,
+        "momentum_24h_bps": -24.868093,
+        "order_book_imbalance": -0.791863,
+        "realized_vol_24h_bps": 23.5265
+      },
+      "forward_return_bps": -23.506816
+    },
+    {
+      "availability_ts_utc": "2025-02-04T18:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-04T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.239125,
+        "momentum_24h_bps": -23.309169,
+        "order_book_imbalance": -0.712057,
+        "realized_vol_24h_bps": 24.545943
+      },
+      "forward_return_bps": -14.08135
+    },
+    {
+      "availability_ts_utc": "2025-02-05T00:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-05T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.172052,
+        "momentum_24h_bps": -19.119963,
+        "order_book_imbalance": -0.704837,
+        "realized_vol_24h_bps": 24.291438
+      },
+      "forward_return_bps": -14.800149
+    },
+    {
+      "availability_ts_utc": "2025-02-05T06:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-05T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.315274,
+        "momentum_24h_bps": -15.250791,
+        "order_book_imbalance": -0.421945,
+        "realized_vol_24h_bps": 26.326393
+      },
+      "forward_return_bps": -15.090714
+    },
+    {
+      "availability_ts_utc": "2025-02-05T12:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-05T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.730586,
+        "momentum_24h_bps": -9.181253,
+        "order_book_imbalance": -1.03188,
+        "realized_vol_24h_bps": 25.438157
+      },
+      "forward_return_bps": 1.220078
+    },
+    {
+      "availability_ts_utc": "2025-02-05T18:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-05T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.666556,
+        "momentum_24h_bps": -11.155467,
+        "order_book_imbalance": -1.298235,
+        "realized_vol_24h_bps": 22.389464
+      },
+      "forward_return_bps": -43.68422
+    },
+    {
+      "availability_ts_utc": "2025-02-06T00:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-06T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.42918,
+        "momentum_24h_bps": -15.831192,
+        "order_book_imbalance": -0.807401,
+        "realized_vol_24h_bps": 19.686256
+      },
+      "forward_return_bps": 17.658584
+    },
+    {
+      "availability_ts_utc": "2025-02-06T06:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-06T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.31183,
+        "momentum_24h_bps": -15.171708,
+        "order_book_imbalance": -0.421347,
+        "realized_vol_24h_bps": 21.534812
+      },
+      "forward_return_bps": -7.848798
+    },
+    {
+      "availability_ts_utc": "2025-02-06T12:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-06T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.332259,
+        "momentum_24h_bps": -1.307696,
+        "order_book_imbalance": 0.162572,
+        "realized_vol_24h_bps": 21.971836
+      },
+      "forward_return_bps": -4.854358
+    },
+    {
+      "availability_ts_utc": "2025-02-06T18:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-06T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.837025,
+        "momentum_24h_bps": -14.014202,
+        "order_book_imbalance": -0.321874,
+        "realized_vol_24h_bps": 24.273574
+      },
+      "forward_return_bps": -11.659766
+    },
+    {
+      "availability_ts_utc": "2025-02-07T00:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-07T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.718065,
+        "momentum_24h_bps": -4.771501,
+        "order_book_imbalance": -0.561632,
+        "realized_vol_24h_bps": 24.725156
+      },
+      "forward_return_bps": -4.614042
+    },
+    {
+      "availability_ts_utc": "2025-02-07T06:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-07T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.374048,
+        "momentum_24h_bps": -3.526627,
+        "order_book_imbalance": -0.140913,
+        "realized_vol_24h_bps": 24.359176
+      },
+      "forward_return_bps": -8.106542
+    },
+    {
+      "availability_ts_utc": "2025-02-07T12:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-07T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.224353,
+        "momentum_24h_bps": -1.175812,
+        "order_book_imbalance": -0.201852,
+        "realized_vol_24h_bps": 24.729278
+      },
+      "forward_return_bps": 11.379214
+    },
+    {
+      "availability_ts_utc": "2025-02-07T18:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-07T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.510673,
+        "momentum_24h_bps": -1.836484,
+        "order_book_imbalance": -0.200115,
+        "realized_vol_24h_bps": 24.829981
+      },
+      "forward_return_bps": 6.213786
+    },
+    {
+      "availability_ts_utc": "2025-02-08T00:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-08T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.772096,
+        "momentum_24h_bps": -8.150213,
+        "order_book_imbalance": -0.373267,
+        "realized_vol_24h_bps": 24.84768
+      },
+      "forward_return_bps": -13.185971
+    },
+    {
+      "availability_ts_utc": "2025-02-08T06:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-08T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 4.201156,
+        "momentum_24h_bps": -11.144937,
+        "order_book_imbalance": -0.116191,
+        "realized_vol_24h_bps": 25.666707
+      },
+      "forward_return_bps": -9.191905
+    },
+    {
+      "availability_ts_utc": "2025-02-08T12:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-08T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.872271,
+        "momentum_24h_bps": -4.064043,
+        "order_book_imbalance": -0.182639,
+        "realized_vol_24h_bps": 24.280355
+      },
+      "forward_return_bps": -30.587917
+    },
+    {
+      "availability_ts_utc": "2025-02-08T18:00:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-08T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.621161,
+        "momentum_24h_bps": -4.041898,
+        "order_book_imbalance": -0.275711,
+        "realized_vol_24h_bps": 22.252658
+      },
+      "forward_return_bps": -18.855535
+    },
+    {
+      "availability_ts_utc": "2025-02-09T00:00:30Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-09T00:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 3.441665,
+        "momentum_24h_bps": -11.54595,
+        "order_book_imbalance": -0.064932,
+        "realized_vol_24h_bps": 21.684529
+      },
+      "forward_return_bps": -12.224046
+    },
+    {
+      "availability_ts_utc": "2025-02-09T06:00:45Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-09T06:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.741954,
+        "momentum_24h_bps": -4.164083,
+        "order_book_imbalance": 0.427067,
+        "realized_vol_24h_bps": 19.81645
+      },
+      "forward_return_bps": -17.617553
+    },
+    {
+      "availability_ts_utc": "2025-02-09T12:01:00Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-09T12:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.12279,
+        "momentum_24h_bps": -1.527328,
+        "order_book_imbalance": 0.542263,
+        "realized_vol_24h_bps": 20.635645
+      },
+      "forward_return_bps": -24.88304
+    },
+    {
+      "availability_ts_utc": "2025-02-09T18:01:15Z",
+      "currency": "USD",
+      "entity_id": "SYN:EQ_ALPHA_01",
+      "event_ts_utc": "2025-02-09T18:00:00Z",
+      "features": {
+        "bid_ask_spread_bps": 2.672175,
+        "momentum_24h_bps": -7.718285,
+        "order_book_imbalance": -0.281992,
+        "realized_vol_24h_bps": 17.853937
+      },
+      "forward_return_bps": 11.600009
+    }
+  ],
+  "version": "1.0.0"
+}

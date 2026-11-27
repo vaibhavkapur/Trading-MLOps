@@ -1,0 +1,59 @@
+{
+  "all_scenarios_passed": true,
+  "final_audit_chain": {
+    "event_count": 39,
+    "head_hash": "6a067bfc21ae21ce290ee6322bc6a212fee5aec89c58eec8f09617e2823e8fa5",
+    "verified": true
+  },
+  "scenario_count": 7,
+  "scenarios": {
+    "artifact_tampering": {
+      "error_code": "ARTIFACT_TAMPERING_DETECTED",
+      "message": "SHA-256 mismatch on weights.json for artifact 'art_alpha_ridge_eq_1_0_0_863c0f8c77'.",
+      "passed": true
+    },
+    "data_leakage": {
+      "error_code": "DATA_LEAKAGE_DETECTED",
+      "failed_experiment_recorded": true,
+      "message": "Point-in-time leakage at record 25: availability_ts_utc precedes event_ts_utc.",
+      "passed": true,
+      "recorded_status": "REJECTED_LEAKAGE"
+    },
+    "failed_validation": {
+      "failed_checks": [
+        "min_net_sharpe",
+        "min_mean_net_return_bps",
+        "min_hit_rate",
+        "min_information_coefficient",
+        "validation_split_positive_signal"
+      ],
+      "passed": true,
+      "promotion_error_code": "VALIDATION_GATE_FAILED",
+      "validation_passed": false
+    },
+    "incompatible_feature_version": {
+      "error_code": "INCOMPATIBLE_FEATURE_VERSION",
+      "message": "Breaking MAJOR feature set mismatch: model v2.0.0 vs serving v1.0.0.",
+      "passed": true
+    },
+    "repeated_job": {
+      "conflicting_spec_error_code": "IDEMPOTENCY_CONFLICT",
+      "idempotent_replay_detected": true,
+      "passed": true,
+      "same_bundle_sha256": true,
+      "same_run_id": true
+    },
+    "rollback": {
+      "from_artifact_id": "art_alpha_ridge_eq_2_0_0_96ce83a46f",
+      "passed": true,
+      "restored_artifact_id": "art_alpha_ridge_eq_1_0_0_863c0f8c77",
+      "restored_model_version": "1.0.0",
+      "rollback_id": "rbk_d50d101ae9252580"
+    },
+    "unauthorized_promotion": {
+      "passed": true,
+      "self_approval_error_code": "SELF_APPROVAL_FORBIDDEN",
+      "wrong_role_error_code": "UNAUTHORIZED_PROMOTION"
+    }
+  }
+}

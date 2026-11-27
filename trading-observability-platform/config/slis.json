@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0.0",
+  "status": "PROPOSED_AND_UNVALIDATED_FOR_PRODUCTION",
+  "disclaimer": "All SLO targets below are PROPOSED engineering hypotheses for local/sandbox calibration, NOT contractual SLAs or assertions of production performance. Establish measured environment baselines before ratifying production targets.",
+  "slis": [
+    {
+      "id": "sli_market_data_freshness",
+      "name": "Market Data Freshness",
+      "service": "market_data",
+      "metric": "trading_market_data_age_seconds",
+      "unit": "seconds",
+      "good_event_definition": "Tick availability age <= 2.0s and zero sequence gaps",
+      "proposed_target": "99.5% of ticks fresh within 2.0s (PROPOSED - sandbox calibration)",
+      "target_status": "PROPOSED",
+      "alert_rule": "STALE_MARKET_DATA"
+    },
+    {
+      "id": "sli_oms_queue_latency",
+      "name": "OMS Queue Lag",
+      "service": "oms",
+      "metric": "trading_oms_queue_lag_seconds",
+      "unit": "seconds",
+      "good_event_definition": "Order queue wait <= 0.150s",
+      "proposed_target": "p99 <= 0.150s in local paper pipeline (PROPOSED - sandbox calibration)",
+      "target_status": "PROPOSED",
+      "alert_rule": "OMS_QUEUE_LAG"
+    },
+    {
+      "id": "sli_broker_ack_latency",
+      "name": "Broker Acknowledgment Latency",
+      "service": "broker",
+      "metric": "trading_broker_ack_latency_seconds",
+      "unit": "seconds",
+      "good_event_definition": "Paper broker ack latency <= 0.250s",
+      "proposed_target": "p95 <= 0.250s in paper sandbox (PROPOSED - sandbox calibration)",
+      "target_status": "PROPOSED",
+      "alert_rule": "BROKER_LATENCY_DEGRADED"
+    },
+    {
+      "id": "sli_order_reject_ratio",
+      "name": "Order Acceptance Ratio",
+      "service": "oms",
+      "metric": "trading_orders_total",
+      "unit": "ratio",
+      "good_event_definition": "Order status in {accepted, filled} / total submitted",
+      "proposed_target": "Reject ratio < 25% over rolling window (PROPOSED - sandbox calibration)",
+      "target_status": "PROPOSED",
+      "alert_rule": "ORDER_REJECT_SPIKE"
+    },
+    {
+      "id": "sli_reconciliation_accuracy",
+      "name": "Broker-Portfolio Reconciliation Match Rate",
+      "service": "portfolio",
+      "metric": "trading_reconciliation_mismatches_total",
+      "unit": "count",
+      "good_event_definition": "Zero unresolved position/fill quantity mismatches",
+      "proposed_target": "0 unresolved mismatches per reconciliation cycle (PROPOSED)",
+      "target_status": "PROPOSED",
+      "alert_rule": "RECONCILIATION_DRIFT"
+    },
+    {
+      "id": "sli_trace_correlation_completeness",
+      "name": "End-to-End Trace Correlation & Timeliness",
+      "service": "observability",
+      "metric": "observability_trace_ingest_delay_seconds",
+      "unit": "seconds",
+      "good_event_definition": "All 6 service hops share trace_id and ingest within 5.0s",
+      "proposed_target": "100% correlation ID propagation; ingest lag <= 5.0s (PROPOSED)",
+      "target_status": "PROPOSED",
+      "alert_rule": "DELAYED_TRACE_INGESTION"
+    },
+    {
+      "id": "sli_monitoring_availability",
+      "name": "Observability Pipeline Heartbeat",
+      "service": "observability",
+      "metric": "observability_watchdog_heartbeat_age_seconds",
+      "unit": "seconds",
+      "good_event_definition": "Collector heartbeat age <= 10.0s and backend healthy",
+      "proposed_target": "Heartbeat gap detected within 10.0s via independent watchdog (PROPOSED)",
+      "target_status": "PROPOSED",
+      "alert_rule": "MONITORING_HEARTBEAT_MISSING"
+    }
+  ]
+}

@@ -1,0 +1,538 @@
+{
+  "resourceSpans": [
+    {
+      "resource": {
+        "attributes": [
+          {
+            "key": "service.name",
+            "value": {
+              "stringValue": "broker"
+            }
+          },
+          {
+            "key": "service.namespace",
+            "value": {
+              "stringValue": "saat.trading"
+            }
+          },
+          {
+            "key": "telemetry.schema.version",
+            "value": {
+              "stringValue": "1.0.0"
+            }
+          }
+        ]
+      },
+      "scopeSpans": [
+        {
+          "scope": {
+            "name": "trading_observability",
+            "version": "0.1.0"
+          },
+          "spans": [
+            {
+              "attributes": [
+                {
+                  "key": "ack_latency_ms",
+                  "value": {
+                    "stringValue": "4.516"
+                  }
+                },
+                {
+                  "key": "broker_exec_id",
+                  "value": {
+                    "stringValue": "PEXEC-000001"
+                  }
+                },
+                {
+                  "key": "status",
+                  "value": {
+                    "stringValue": "filled"
+                  }
+                },
+                {
+                  "key": "symbol",
+                  "value": {
+                    "stringValue": "SYN-EQ-01"
+                  }
+                },
+                {
+                  "key": "venue",
+                  "value": {
+                    "stringValue": "PAPER_BROKER_1"
+                  }
+                },
+                {
+                  "key": "correlation_id",
+                  "value": {
+                    "stringValue": "corr-FB-0001-ORD-000001"
+                  }
+                },
+                {
+                  "key": "order_id",
+                  "value": {
+                    "stringValue": "ORD-000001"
+                  }
+                },
+                {
+                  "key": "feed_batch_id",
+                  "value": {
+                    "stringValue": "FB-0001"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1795774513815458000",
+              "kind": 1,
+              "name": "broker.execute_paper_order",
+              "parentSpanId": "53a9ae9e2f0647e8",
+              "spanId": "68bc0d4d3d3dfba3",
+              "startTimeUnixNano": "1795774513810942000",
+              "status": {
+                "code": 1,
+                "message": "ok"
+              },
+              "traceId": "a00fb6e53b4b64cc1b3f150253c2a655"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "resource": {
+        "attributes": [
+          {
+            "key": "service.name",
+            "value": {
+              "stringValue": "market_data"
+            }
+          },
+          {
+            "key": "service.namespace",
+            "value": {
+              "stringValue": "saat.trading"
+            }
+          },
+          {
+            "key": "telemetry.schema.version",
+            "value": {
+              "stringValue": "1.0.0"
+            }
+          }
+        ]
+      },
+      "scopeSpans": [
+        {
+          "scope": {
+            "name": "trading_observability",
+            "version": "0.1.0"
+          },
+          "spans": [
+            {
+              "attributes": [
+                {
+                  "key": "feed_age_seconds",
+                  "value": {
+                    "stringValue": "0.012"
+                  }
+                },
+                {
+                  "key": "seq",
+                  "value": {
+                    "stringValue": "1"
+                  }
+                },
+                {
+                  "key": "sequence_gap",
+                  "value": {
+                    "stringValue": "False"
+                  }
+                },
+                {
+                  "key": "symbol",
+                  "value": {
+                    "stringValue": "SYN-EQ-01"
+                  }
+                },
+                {
+                  "key": "venue",
+                  "value": {
+                    "stringValue": "SYNTH_EXCH_A"
+                  }
+                },
+                {
+                  "key": "correlation_id",
+                  "value": {
+                    "stringValue": "corr-FB-0001-ORD-000001"
+                  }
+                },
+                {
+                  "key": "order_id",
+                  "value": {
+                    "stringValue": "ORD-000001"
+                  }
+                },
+                {
+                  "key": "feed_batch_id",
+                  "value": {
+                    "stringValue": "FB-0001"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1795774513810600000",
+              "kind": 1,
+              "name": "market_data.ingest_tick",
+              "parentSpanId": "",
+              "spanId": "a6be3ca25eeb200c",
+              "startTimeUnixNano": "1795774513809400000",
+              "status": {
+                "code": 1,
+                "message": "ok"
+              },
+              "traceId": "a00fb6e53b4b64cc1b3f150253c2a655"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "resource": {
+        "attributes": [
+          {
+            "key": "service.name",
+            "value": {
+              "stringValue": "oms"
+            }
+          },
+          {
+            "key": "service.namespace",
+            "value": {
+              "stringValue": "saat.trading"
+            }
+          },
+          {
+            "key": "telemetry.schema.version",
+            "value": {
+              "stringValue": "1.0.0"
+            }
+          }
+        ]
+      },
+      "scopeSpans": [
+        {
+          "scope": {
+            "name": "trading_observability",
+            "version": "0.1.0"
+          },
+          "spans": [
+            {
+              "attributes": [
+                {
+                  "key": "queue_lag_ms",
+                  "value": {
+                    "stringValue": "3.5"
+                  }
+                },
+                {
+                  "key": "side",
+                  "value": {
+                    "stringValue": "BUY"
+                  }
+                },
+                {
+                  "key": "symbol",
+                  "value": {
+                    "stringValue": "SYN-EQ-01"
+                  }
+                },
+                {
+                  "key": "correlation_id",
+                  "value": {
+                    "stringValue": "corr-FB-0001-ORD-000001"
+                  }
+                },
+                {
+                  "key": "order_id",
+                  "value": {
+                    "stringValue": "ORD-000001"
+                  }
+                },
+                {
+                  "key": "feed_batch_id",
+                  "value": {
+                    "stringValue": "FB-0001"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1795774513814117000",
+              "kind": 1,
+              "name": "oms.dispatch_order",
+              "parentSpanId": "8e6906b18267c682",
+              "spanId": "53a9ae9e2f0647e8",
+              "startTimeUnixNano": "1795774513810617000",
+              "status": {
+                "code": 1,
+                "message": "ok"
+              },
+              "traceId": "a00fb6e53b4b64cc1b3f150253c2a655"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "resource": {
+        "attributes": [
+          {
+            "key": "service.name",
+            "value": {
+              "stringValue": "portfolio"
+            }
+          },
+          {
+            "key": "service.namespace",
+            "value": {
+              "stringValue": "saat.trading"
+            }
+          },
+          {
+            "key": "telemetry.schema.version",
+            "value": {
+              "stringValue": "1.0.0"
+            }
+          }
+        ]
+      },
+      "scopeSpans": [
+        {
+          "scope": {
+            "name": "trading_observability",
+            "version": "0.1.0"
+          },
+          "spans": [
+            {
+              "attributes": [
+                {
+                  "key": "status",
+                  "value": {
+                    "stringValue": "filled"
+                  }
+                },
+                {
+                  "key": "symbol",
+                  "value": {
+                    "stringValue": "SYN-EQ-01"
+                  }
+                },
+                {
+                  "key": "correlation_id",
+                  "value": {
+                    "stringValue": "corr-FB-0001-ORD-000001"
+                  }
+                },
+                {
+                  "key": "order_id",
+                  "value": {
+                    "stringValue": "ORD-000001"
+                  }
+                },
+                {
+                  "key": "feed_batch_id",
+                  "value": {
+                    "stringValue": "FB-0001"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1795774513812806000",
+              "kind": 1,
+              "name": "portfolio.apply_fill_and_reconcile",
+              "parentSpanId": "68bc0d4d3d3dfba3",
+              "spanId": "ff2e9be98995ce50",
+              "startTimeUnixNano": "1795774513811306000",
+              "status": {
+                "code": 1,
+                "message": "ok"
+              },
+              "traceId": "a00fb6e53b4b64cc1b3f150253c2a655"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "resource": {
+        "attributes": [
+          {
+            "key": "service.name",
+            "value": {
+              "stringValue": "research"
+            }
+          },
+          {
+            "key": "service.namespace",
+            "value": {
+              "stringValue": "saat.trading"
+            }
+          },
+          {
+            "key": "telemetry.schema.version",
+            "value": {
+              "stringValue": "1.0.0"
+            }
+          }
+        ]
+      },
+      "scopeSpans": [
+        {
+          "scope": {
+            "name": "trading_observability",
+            "version": "0.1.0"
+          },
+          "spans": [
+            {
+              "attributes": [
+                {
+                  "key": "confidence",
+                  "value": {
+                    "stringValue": "0.6318"
+                  }
+                },
+                {
+                  "key": "side",
+                  "value": {
+                    "stringValue": "BUY"
+                  }
+                },
+                {
+                  "key": "signal_id",
+                  "value": {
+                    "stringValue": "SIG-00001"
+                  }
+                },
+                {
+                  "key": "strategy_id",
+                  "value": {
+                    "stringValue": "strat-meanrev-paper-v1"
+                  }
+                },
+                {
+                  "key": "symbol",
+                  "value": {
+                    "stringValue": "SYN-EQ-01"
+                  }
+                },
+                {
+                  "key": "correlation_id",
+                  "value": {
+                    "stringValue": "corr-FB-0001-ORD-000001"
+                  }
+                },
+                {
+                  "key": "order_id",
+                  "value": {
+                    "stringValue": "ORD-000001"
+                  }
+                },
+                {
+                  "key": "feed_batch_id",
+                  "value": {
+                    "stringValue": "FB-0001"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1795774513812337000",
+              "kind": 1,
+              "name": "research.generate_signal",
+              "parentSpanId": "a6be3ca25eeb200c",
+              "spanId": "b94e2e6808c8fca9",
+              "startTimeUnixNano": "1795774513809937000",
+              "status": {
+                "code": 1,
+                "message": "ok"
+              },
+              "traceId": "a00fb6e53b4b64cc1b3f150253c2a655"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "resource": {
+        "attributes": [
+          {
+            "key": "service.name",
+            "value": {
+              "stringValue": "risk"
+            }
+          },
+          {
+            "key": "service.namespace",
+            "value": {
+              "stringValue": "saat.trading"
+            }
+          },
+          {
+            "key": "telemetry.schema.version",
+            "value": {
+              "stringValue": "1.0.0"
+            }
+          }
+        ]
+      },
+      "scopeSpans": [
+        {
+          "scope": {
+            "name": "trading_observability",
+            "version": "0.1.0"
+          },
+          "spans": [
+            {
+              "attributes": [
+                {
+                  "key": "check_passed",
+                  "value": {
+                    "stringValue": "True"
+                  }
+                },
+                {
+                  "key": "symbol",
+                  "value": {
+                    "stringValue": "SYN-EQ-01"
+                  }
+                },
+                {
+                  "key": "correlation_id",
+                  "value": {
+                    "stringValue": "corr-FB-0001-ORD-000001"
+                  }
+                },
+                {
+                  "key": "order_id",
+                  "value": {
+                    "stringValue": "ORD-000001"
+                  }
+                },
+                {
+                  "key": "feed_batch_id",
+                  "value": {
+                    "stringValue": "FB-0001"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1795774513812125000",
+              "kind": 1,
+              "name": "risk.pre_trade_check",
+              "parentSpanId": "b94e2e6808c8fca9",
+              "spanId": "8e6906b18267c682",
+              "startTimeUnixNano": "1795774513810325000",
+              "status": {
+                "code": 1,
+                "message": "ok"
+              },
+              "traceId": "a00fb6e53b4b64cc1b3f150253c2a655"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

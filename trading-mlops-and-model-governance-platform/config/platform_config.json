@@ -1,0 +1,49 @@
+{
+  "config_version": "1.0.0",
+  "environment": "local_sandbox",
+  "order_execution_enabled": false,
+  "allow_automatic_live_promotion": false,
+  "allow_blind_recent_return_retraining": false,
+  "signing": {
+    "algorithm": "HMAC-SHA256",
+    "key_env_var": "TRADING_MLOPS_SIGNING_KEY",
+    "key_id": "local-dev-hmac-v1"
+  },
+  "lineage": {
+    "min_embargo_seconds": 3600,
+    "min_training_span_days": 30,
+    "max_suspicious_feature_target_corr": 0.985,
+    "require_utc_timestamps": true
+  },
+  "validation_gate": {
+    "min_oos_samples": 40,
+    "min_net_sharpe": 0.25,
+    "min_net_return_bps": 0.0,
+    "max_drawdown_pct": 0.25,
+    "max_daily_turnover": 2.5,
+    "min_hit_rate": 0.51,
+    "min_information_coefficient": 0.03,
+    "max_subperiod_sharpe_gap": 6.0,
+    "transaction_cost_bps": 5.0
+  },
+  "governance": {
+    "forbid_self_approval": true,
+    "stage_required_approvals": {
+      "SHADOW": ["RISK_APPROVER"],
+      "PAPER": ["RISK_APPROVER"],
+      "LIVE_GATED": ["RISK_APPROVER", "COMPLIANCE_OFFICER"]
+    },
+    "allow_live_execution_in_mvp": false
+  },
+  "monitoring": {
+    "psi_warning_threshold": 0.15,
+    "psi_critical_threshold": 0.25,
+    "mean_shift_z_warning": 1.5,
+    "mean_shift_z_critical": 2.5,
+    "prediction_mean_shift_warning": 1.5,
+    "prediction_mean_shift_critical": 2.5,
+    "shadow_divergence_warning": 0.2,
+    "shadow_divergence_critical": 0.5,
+    "min_monitoring_samples": 20
+  }
+}

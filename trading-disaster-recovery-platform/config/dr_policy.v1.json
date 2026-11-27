@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0.0",
+  "policy_id": "saat-dr-policy-v1",
+  "environment": "local-prototype",
+  "execution_policy": {
+    "live_execution_allowed": false,
+    "paper_sandbox_allowed": true,
+    "require_reconciliation_pass": true,
+    "require_valid_fence": true,
+    "require_fresh_snapshot": true,
+    "fail_closed_on_unknown_order": true,
+    "fail_closed_on_broker_outage": true
+  },
+  "fencing": {
+    "lease_ttl_ms": 5000,
+    "clock_skew_tolerance_ms": 500,
+    "require_monotonic_epoch": true
+  },
+  "freshness": {
+    "max_snapshot_age_ms": 30000,
+    "max_market_feed_age_ms": 5000,
+    "max_broker_snapshot_age_ms": 10000
+  },
+  "backup": {
+    "verify_sha256_on_restore": true,
+    "verify_wal_hash_chain": true,
+    "checkpoint_interval_events": 10
+  },
+  "reconciliation": {
+    "max_cash_tolerance_minor": 0,
+    "max_position_tolerance_qty": 0,
+    "abort_on_unexpected_broker_order": true
+  },
+  "objectives_by_component": [
+    {
+      "component": "oms_state",
+      "proposed_rpo_ms": 0,
+      "proposed_rto_ms": 5000,
+      "notes": "Zero lost acknowledged order intents via synchronous WAL + broker reconciliation."
+    },
+    {
+      "component": "position_and_cash_ledger",
+      "proposed_rpo_ms": 0,
+      "proposed_rto_ms": 5000,
+      "notes": "Reconstructed from verified checkpoint + WAL replay and reconciled against broker truth."
+    },
+    {
+      "component": "market_data_snapshot",
+      "proposed_rpo_ms": 5000,
+      "proposed_rto_ms": 10000,
+      "notes": "Stale market snapshots block trading until fresh feed resumes."
+    },
+    {
+      "component": "database_backup_restore",
+      "proposed_rpo_ms": 1000,
+      "proposed_rto_ms": 30000,
+      "notes": "Checkpoint snapshot + WAL tail restore; bounded by archive flush interval."
+    },
+    {
+      "component": "broker_gateway_failover",
+      "proposed_rpo_ms": 0,
+      "proposed_rto_ms": 15000,
+      "notes": "Fenced primary election plus mandatory broker reconciliation before resuming."
+    }
+  ]
+}

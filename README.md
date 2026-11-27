@@ -1,41 +1,25 @@
-# Financial Model Drift Detection Platform
+# Trading MLOps
 
-A local monitor for versioned binary forecasts. It compares numeric features and predicted probabilities with a frozen reference, evaluates accuracy and calibration when labels mature, and opens evidence-backed tickets for human review. The worked example uses synthetic 10-minute forecasts.
+Four independent projects use synthetic trading data to test how models are approved, how operators detect drift and trace orders, and when a trading system can safely resume after a failure. The model governance, drift detection, and observability projects use Python. The disaster recovery platform uses Go.
 
-## Run the prototype
+## Getting started
 
-From this directory on macOS or Linux with Python 3.9+ and SQLite 3.24+ built into Python, run the following commands. The runtime and tests use only the standard library.
+Start with the Trading MLOps and Model Governance Platform. Its offline demo requires Python 3.9 or later and uses the standard library.
 
-```sh
-scripts/setup
-scripts/validate
-scripts/demo
+```bash
+git clone https://github.com/vaibhavkapur/Trading-MLOps.git
+cd Trading-MLOps/trading-mlops-and-model-governance-platform
+bash scripts/setup.sh
+python3 scripts/demo.py
 ```
 
-The demo prints paths to a standalone HTML dashboard, a SQLite database and a Prometheus textfile inside a fresh private directory under `var/demos/`. Open the HTML file locally, expand an incident, and inspect the trigger, window counts and review history. Each invocation builds an independent example.
+The demo trains a model, promotes it through shadow and paper review, and checks it against a shifted dataset. Inspect `m4_drift_severity` and `m4_recommended_safe_fallback` in the output to see what the monitor detected and how it recommends responding. Run each project's setup, demo, and validation commands from its own directory.
 
-## Use your own local registry
+## Projects
 
-```sh
-export DRIFT_DB="$PWD/var/example.sqlite3"
-bin/drift register config/monitor.v1.json
-scripts/fixtures > var/events.ndjson
-bin/drift ingest var/events.ndjson --registry direction-hourly-v1
-bin/drift tick --registry direction-hourly-v1 --as-of 2026-01-08T07:00:00Z
-bin/drift show 1
-bin/drift dashboard > var/dashboard.html
-bin/drift metrics > var/drift.prom
-```
+- [Trading MLOps and Model Governance Platform](trading-mlops-and-model-governance-platform/) — Tracks training data and model lineage, signs artifacts, and requires independent approval before promotion. Its recovery drill verifies the artifact before rollback.
+- [Financial Model Drift Detection Platform](financial-model-drift-detection-platform/) — Compares features and forecasts with a frozen baseline, scores predictions as labels arrive, and records the evidence behind each review ticket.
+- [Trading Observability Platform](trading-observability-platform/) — Follows a paper order across six services using correlated traces, redacted logs, and Prometheus metrics. Fault scenarios exercise alert routing and monitoring outages.
+- [Trading Disaster Recovery Platform](trading-disaster-recovery-platform/) — Restores a checkpoint, replays the write-ahead log, and reconciles orders, cash, and positions with a simulated broker before resuming paper trading.
 
-A tick evaluates every due window and refreshes older windows when newly available observations, labels or cohort maturity can change their evidence. The explicit cutoff keeps a historical replay on the fixture clock. Register a fresh identifier and feed when changing the baseline or policy.
-
-## Validation and handoff
-
-- [Chronological evaluation and acceptance evidence](reports/acceptance.md)
-- [Raw tuning and holdout windows](reports/evaluation.json) and [test output](reports/tests.txt)
-- [Architecture, decisions and limitations](docs/architecture.md)
-- [Record schema, scoring and CLI contract](docs/contracts.md)
-- [Worker operation, incident review, access and recovery](docs/runbook.md)
-- [Synthetic fixture provenance](data/fixtures/manifest.json)
-
-Run `scripts/ci` to execute the same checks as the repository workflow, including replay and comparison with the retained evidence. Local output stays under `var/`. This prototype ends at a human review ticket. Connecting a provider or a deployment system requires a separate project decision.
+Each project README links to its architecture, operator runbook, and validation evidence.

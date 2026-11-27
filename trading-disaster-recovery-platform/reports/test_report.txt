@@ -1,0 +1,51 @@
+?   	trading-dr-platform/src/cmd/drctl	[no test files]
+?   	trading-dr-platform/src/domain	[no test files]
+?   	trading-dr-platform/src/dr	[no test files]
+?   	trading-dr-platform/src/fencing	[no test files]
+?   	trading-dr-platform/src/ledger	[no test files]
+?   	trading-dr-platform/src/oms	[no test files]
+?   	trading-dr-platform/src/reconcile	[no test files]
+?   	trading-dr-platform/src/replay	[no test files]
+?   	trading-dr-platform/src/storage	[no test files]
+=== RUN   TestEndToEndCheckpointRestoreReplayAndReconcile
+--- PASS: TestEndToEndCheckpointRestoreReplayAndReconcile (0.08s)
+=== RUN   TestReconciliationBlocksOnCashOrPositionDrift
+--- PASS: TestReconciliationBlocksOnCashOrPositionDrift (0.06s)
+PASS
+ok  	trading-dr-platform/tests/integration	1.608s
+=== RUN   TestAllEightRequiredDisasterRecoveryScenarios
+=== RUN   TestAllEightRequiredDisasterRecoveryScenarios/process_crash_mid_submit
+=== RUN   TestAllEightRequiredDisasterRecoveryScenarios/duplicate_events
+=== RUN   TestAllEightRequiredDisasterRecoveryScenarios/database_restore
+=== RUN   TestAllEightRequiredDisasterRecoveryScenarios/network_partition
+=== RUN   TestAllEightRequiredDisasterRecoveryScenarios/split_brain
+=== RUN   TestAllEightRequiredDisasterRecoveryScenarios/stale_snapshot
+=== RUN   TestAllEightRequiredDisasterRecoveryScenarios/backup_corruption
+=== RUN   TestAllEightRequiredDisasterRecoveryScenarios/broker_outage
+--- PASS: TestAllEightRequiredDisasterRecoveryScenarios (0.57s)
+    --- PASS: TestAllEightRequiredDisasterRecoveryScenarios/process_crash_mid_submit (0.00s)
+    --- PASS: TestAllEightRequiredDisasterRecoveryScenarios/duplicate_events (0.00s)
+    --- PASS: TestAllEightRequiredDisasterRecoveryScenarios/database_restore (0.00s)
+    --- PASS: TestAllEightRequiredDisasterRecoveryScenarios/network_partition (0.00s)
+    --- PASS: TestAllEightRequiredDisasterRecoveryScenarios/split_brain (0.00s)
+    --- PASS: TestAllEightRequiredDisasterRecoveryScenarios/stale_snapshot (0.00s)
+    --- PASS: TestAllEightRequiredDisasterRecoveryScenarios/backup_corruption (0.00s)
+    --- PASS: TestAllEightRequiredDisasterRecoveryScenarios/broker_outage (0.00s)
+PASS
+ok  	trading-dr-platform/tests/scenarios	2.432s
+=== RUN   TestPolicyAndFailureModeConfigValidation
+--- PASS: TestPolicyAndFailureModeConfigValidation (0.00s)
+=== RUN   TestTradingEventValidationInvariants
+--- PASS: TestTradingEventValidationInvariants (0.00s)
+=== RUN   TestLedgerIdempotencyAndJournalInvariants
+--- PASS: TestLedgerIdempotencyAndJournalInvariants (0.00s)
+=== RUN   TestOMSStateMachineIdempotencyAndSafety
+--- PASS: TestOMSStateMachineIdempotencyAndSafety (0.00s)
+=== RUN   TestWALHashChainAndTamperDetection
+--- PASS: TestWALHashChainAndTamperDetection (0.01s)
+=== RUN   TestBackupManagerChecksumIntegrity
+--- PASS: TestBackupManagerChecksumIntegrity (0.03s)
+=== RUN   TestFencingCoordinatorMonotonicEpochsAndSplitBrain
+--- PASS: TestFencingCoordinatorMonotonicEpochsAndSplitBrain (0.02s)
+PASS
+ok  	trading-dr-platform/tests/unit	2.062s

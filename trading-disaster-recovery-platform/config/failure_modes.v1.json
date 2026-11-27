@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0.0",
+  "inventory_id": "trading-dr-failure-modes-v1",
+  "failure_modes": [
+    {
+      "id": "FM-001",
+      "scenario_key": "process_crash_mid_submit",
+      "component": "oms_state",
+      "severity": "critical",
+      "description": "Trading process crashes after writing local pending-submit intent to WAL but before recording broker acknowledgement.",
+      "detection": "Startup recovery discovers orders in PENDING_SUBMIT or UNKNOWN state without terminal ack/reject.",
+      "expected_behavior": "Mark order UNKNOWN, query broker by client_order_id/idempotency_key during reconciliation, converge to broker state without duplicating order submission.",
+      "fail_closed": true,
+      "proposed_rpo_ms": 0,
+      "proposed_rto_ms": 5000
+    },
+    {
+      "id": "FM-002",
+      "scenario_key": "duplicate_events",
+      "component": "oms_state",
+      "severity": "high",
+      "description": "Event replay or redelivered broker/feed messages emit duplicate order intents or duplicate execution fills.",
+      "detection": "Event ID, fill ID, or idempotency key already present in durable deduplication registry.",
+      "expected_behavior": "Idempotently ignore duplicates, preserve exact order intent and ledger balance, record duplicate counter metric.",
+      "fail_closed": false,
+      "proposed_rpo_ms": 0,
+      "proposed_rto_ms": 5000
+    },
+    {
+      "id": "FM-003",
+      "scenario_key": "database_restore",
+      "component": "database_backup_restore",
+      "severity": "critical",
+      "description": "Primary datastore is lost and must be restored from an earlier verified checkpoint backup plus subsequent WAL archive segments.",
+      "detection": "Datastore unavailable or fresh standby provisioned from backup archive.",
+      "expected_behavior": "Verify backup manifest SHA-256, restore base snapshot, replay WAL tail, reconcile with broker, verify zero balance/position drift before enabling trading.",
+      "fail_closed": true,
+      "proposed_rpo_ms": 1000,
+      "proposed_rto_ms": 30000
+    },
+    {
+      "id": "FM-004",
+      "scenario_key": "network_partition",
+      "component": "broker_gateway_failover",
+      "severity": "critical",
+      "description": "Active node loses network connectivity to coordinator/broker and cannot renew its lease or verify external order state.",
+      "detection": "Lease renewal fails or broker heartbeat/query times out.",
+      "expected_behavior": "Immediately fence local execution gate (block new orders), wait for connectivity and broker reconciliation before any resumption.",
+      "fail_closed": true,
+      "proposed_rpo_ms": 0,
+      "proposed_rto_ms": 15000
+    },
+    {
+      "id": "FM-005",
+      "scenario_key": "split_brain",
+      "component": "broker_gateway_failover",
+      "severity": "critical",
+      "description": "Stale primary continues attempting to submit orders after standby promoted with a higher fencing epoch.",
+      "detection": "Monotonic fencing token check rejects stale epoch at execution gate and broker/coordinator boundary.",
+      "expected_behavior": "Reject all writes and order submissions from stale epoch; only active holder of highest valid lease may proceed after reconciliation.",
+      "fail_closed": true,
+      "proposed_rpo_ms": 0,
+      "proposed_rto_ms": 15000
+    },
+    {
+      "id": "FM-006",
+      "scenario_key": "stale_snapshot",
+      "component": "market_data_snapshot",
+      "severity": "high",
+      "description": "Recovered node loads an outdated checkpoint or market-data snapshot exceeding configured freshness threshold.",
+      "detection": "Snapshot or feed availability timestamp age exceeds max_snapshot_age_ms / max_market_feed_age_ms.",
+      "expected_behavior": "Block order submission (fail-closed) until fresh verified snapshot and live feed timestamps are observed.",
+      "fail_closed": true,
+      "proposed_rpo_ms": 5000,
+      "proposed_rto_ms": 10000
+    },
+    {
+      "id": "FM-007",
+      "scenario_key": "backup_corruption",
+      "component": "database_backup_restore",
+      "severity": "critical",
+      "description": "Backup snapshot payload or WAL archive record is tampered with or corrupted on disk/object store.",
+      "detection": "SHA-256 payload digest mismatch or WAL hash-chain break during restore.",
+      "expected_behavior": "Abort restore immediately, refuse to start trading, emit structured corruption error and require operator escalation / prior clean backup.",
+      "fail_closed": true,
+      "proposed_rpo_ms": 1000,
+      "proposed_rto_ms": 30000
+    },
+    {
+      "id": "FM-008",
+      "scenario_key": "broker_outage",
+      "component": "broker_gateway_failover",
+      "severity": "critical",
+      "description": "External broker API is unreachable during startup reconciliation, leaving external open orders and balances unverified.",
+      "detection": "Broker reconciliation snapshot/order query returns connectivity or timeout error.",
+      "expected_behavior": "Keep execution gate locked (fail-closed) with UNKNOWN_EXTERNAL_STATE reason until broker connectivity recovers and reconciliation succeeds.",
+      "fail_closed": true,
+      "proposed_rpo_ms": 0,
+      "proposed_rto_ms": 15000
+    }
+  ]
+}

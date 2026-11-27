@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_id": "trading-dr-synthetic-fixtures-v1",
+  "provenance": "Synthetic deterministic trading events generated specifically for Trading Disaster Recovery Platform MVP verification.",
+  "entitlements": "Internal synthetic test fixtures; no third-party market data or proprietary brokerage records.",
+  "fixed_seed": 20260115,
+  "currency_units": "ISO-4217 minor units (USD cents; 100 minor units = $1.00)",
+  "timestamps": "UTC RFC3339Nano with explicit event_time_utc and available_time_utc",
+  "files": [
+    {
+      "path": "data/fixtures/baseline_events.jsonl",
+      "description": "13 ordered synthetic events covering cash deposit, market snapshots, 3 orders, partial and full fills, and fees.",
+      "expected_end_cash_usd_minor": 96793740,
+      "expected_positions": {
+        "AAPL": 60,
+        "MSFT": 50
+      }
+    },
+    {
+      "path": "data/fixtures/broker_baseline.json",
+      "description": "Broker ground-truth snapshot corresponding to baseline_events.jsonl after sequence 13."
+    }
+  ]
+}

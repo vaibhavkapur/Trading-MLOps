@@ -1,0 +1,271 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at_utc": "2026-11-27T10:12:36.850959Z",
+  "policy_id": "saat-dr-policy-v1",
+  "inventory_id": "trading-dr-failure-modes-v1",
+  "fixed_seed": 20260115,
+  "environment": "local-prototype",
+  "go_version": "go1.27.1",
+  "os_arch": "darwin/arm64",
+  "all_passed": true,
+  "scenarios": [
+    {
+      "failure_mode_id": "FM-001",
+      "scenario_key": "process_crash_mid_submit",
+      "component": "oms_state",
+      "passed": true,
+      "fail_closed_proven": true,
+      "proposed_rpo_ms": 0,
+      "measured_rpo_ms": 0,
+      "proposed_rto_ms": 5000,
+      "measured_rto_ms": 5.106,
+      "assertions": [
+        "in_flight_marked_unknown=[ORD-1004 ORD-1005]",
+        "ORD-1004_converged=FILLED (AAPL_pos=70)",
+        "ORD-1005_not_resubmitted_status=REJECTED (broker_submits=0)",
+        "reconciled_cash_minor=96607715 (expected=96607715)"
+      ],
+      "notes": "Recovered both broker-filled and broker-absent mid-submit orders without duplicate submission.",
+      "metrics": {
+        "events_applied": 15,
+        "duplicate_events_ignored": 0,
+        "duplicate_fills_ignored": 0,
+        "uncertain_orders_detected": 2,
+        "uncertain_orders_resolved": 2,
+        "fencing_rejections": 0,
+        "stale_data_blocks": 0,
+        "corruption_detections": 0,
+        "broker_outage_blocks": 0,
+        "reconciliation_successes": 1,
+        "reconciliation_failures": 0,
+        "checkpoints_written": 0,
+        "backups_restored": 0
+      }
+    },
+    {
+      "failure_mode_id": "FM-002",
+      "scenario_key": "duplicate_events",
+      "component": "oms_state",
+      "passed": true,
+      "fail_closed_proven": true,
+      "proposed_rpo_ms": 0,
+      "measured_rpo_ms": 0,
+      "proposed_rto_ms": 5000,
+      "measured_rto_ms": 4.41,
+      "assertions": [
+        "duplicates_ignored=3",
+        "distinct_orders=3 distinct_fills=4",
+        "reconciled_cash=96793740 AAPL=60 MSFT=50"
+      ],
+      "notes": "Exact-replay and redelivered fill duplicates were idempotently ignored with zero balance drift.",
+      "metrics": {
+        "events_applied": 13,
+        "duplicate_events_ignored": 3,
+        "duplicate_fills_ignored": 1,
+        "uncertain_orders_detected": 0,
+        "uncertain_orders_resolved": 0,
+        "fencing_rejections": 0,
+        "stale_data_blocks": 0,
+        "corruption_detections": 0,
+        "broker_outage_blocks": 0,
+        "reconciliation_successes": 1,
+        "reconciliation_failures": 0,
+        "checkpoints_written": 0,
+        "backups_restored": 0
+      }
+    },
+    {
+      "failure_mode_id": "FM-003",
+      "scenario_key": "database_restore",
+      "component": "database_backup_restore",
+      "passed": true,
+      "fail_closed_proven": true,
+      "proposed_rpo_ms": 1000,
+      "measured_rpo_ms": 0,
+      "proposed_rto_ms": 30000,
+      "measured_rto_ms": 3.107,
+      "assertions": [
+        "backup_sha256_verified=cea1000fd16144ea",
+        "wal_tail_replayed=seq_8_to_13",
+        "restored_cash=96793740 AAPL=60 MSFT=50"
+      ],
+      "notes": "Restored OMS and ledger from verified gzip/SHA-256 checkpoint plus WAL tail and reconciled with broker.",
+      "metrics": {
+        "events_applied": 5,
+        "duplicate_events_ignored": 8,
+        "duplicate_fills_ignored": 0,
+        "uncertain_orders_detected": 0,
+        "uncertain_orders_resolved": 0,
+        "fencing_rejections": 0,
+        "stale_data_blocks": 0,
+        "corruption_detections": 0,
+        "broker_outage_blocks": 0,
+        "reconciliation_successes": 1,
+        "reconciliation_failures": 0,
+        "checkpoints_written": 0,
+        "backups_restored": 1
+      }
+    },
+    {
+      "failure_mode_id": "FM-004",
+      "scenario_key": "network_partition",
+      "component": "broker_gateway_failover",
+      "passed": true,
+      "fail_closed_proven": true,
+      "proposed_rpo_ms": 0,
+      "measured_rpo_ms": 0,
+      "proposed_rto_ms": 15000,
+      "measured_rto_ms": 0.184,
+      "assertions": [
+        "partitioned_gate_allowed=false",
+        "partitioned_submit_blocked=true (broker_submits=0)",
+        "post_heal_reconciled_gate_allowed=true"
+      ],
+      "notes": "Network partition fenced order submission fail-closed; healing and broker reconciliation restored trading.",
+      "metrics": {
+        "events_applied": 13,
+        "duplicate_events_ignored": 13,
+        "duplicate_fills_ignored": 0,
+        "uncertain_orders_detected": 0,
+        "uncertain_orders_resolved": 0,
+        "fencing_rejections": 2,
+        "stale_data_blocks": 0,
+        "corruption_detections": 0,
+        "broker_outage_blocks": 0,
+        "reconciliation_successes": 2,
+        "reconciliation_failures": 0,
+        "checkpoints_written": 0,
+        "backups_restored": 0
+      }
+    },
+    {
+      "failure_mode_id": "FM-005",
+      "scenario_key": "split_brain",
+      "component": "broker_gateway_failover",
+      "passed": true,
+      "fail_closed_proven": true,
+      "proposed_rpo_ms": 0,
+      "measured_rpo_ms": 0,
+      "proposed_rto_ms": 15000,
+      "measured_rto_ms": 4.633,
+      "assertions": [
+        "epoch_transition=1-\u003e2",
+        "stale_primary_blocked_locally=true",
+        "stale_primary_fenced_at_broker=true",
+        "authorized_standby_order=BRK-9101 (total_broker_submits=1)"
+      ],
+      "notes": "Monotonic fencing epoch blocked stale primary at both local gate and broker boundary.",
+      "metrics": {
+        "events_applied": 14,
+        "duplicate_events_ignored": 0,
+        "duplicate_fills_ignored": 0,
+        "uncertain_orders_detected": 0,
+        "uncertain_orders_resolved": 0,
+        "fencing_rejections": 0,
+        "stale_data_blocks": 0,
+        "corruption_detections": 0,
+        "broker_outage_blocks": 0,
+        "reconciliation_successes": 1,
+        "reconciliation_failures": 0,
+        "checkpoints_written": 0,
+        "backups_restored": 0
+      }
+    },
+    {
+      "failure_mode_id": "FM-006",
+      "scenario_key": "stale_snapshot",
+      "component": "market_data_snapshot",
+      "passed": true,
+      "fail_closed_proven": true,
+      "proposed_rpo_ms": 5000,
+      "measured_rpo_ms": 0,
+      "proposed_rto_ms": 10000,
+      "measured_rto_ms": 4.846,
+      "assertions": [
+        "freshness_passed=false gate_allowed=false",
+        "blocking_reasons=[stale_checkpoint_snapshot: age=120000ms \u003e max=30000ms stale_market_feed: age=122613ms \u003e max=5000ms]",
+        "order_blocked_fail_closed=true"
+      ],
+      "notes": "Stale checkpoint and stale market feed blocked execution fail-closed.",
+      "metrics": {
+        "events_applied": 0,
+        "duplicate_events_ignored": 13,
+        "duplicate_fills_ignored": 0,
+        "uncertain_orders_detected": 0,
+        "uncertain_orders_resolved": 0,
+        "fencing_rejections": 0,
+        "stale_data_blocks": 1,
+        "corruption_detections": 0,
+        "broker_outage_blocks": 0,
+        "reconciliation_successes": 1,
+        "reconciliation_failures": 0,
+        "checkpoints_written": 0,
+        "backups_restored": 1
+      }
+    },
+    {
+      "failure_mode_id": "FM-007",
+      "scenario_key": "backup_corruption",
+      "component": "database_backup_restore",
+      "passed": true,
+      "fail_closed_proven": true,
+      "proposed_rpo_ms": 1000,
+      "measured_rpo_ms": 0,
+      "proposed_rto_ms": 30000,
+      "measured_rto_ms": 3.157,
+      "assertions": [
+        "backup_sha256_corruption_detected=true",
+        "wal_hash_chain_tamper_detected=true",
+        "gate_remains_closed=true"
+      ],
+      "notes": "SHA-256 backup payload check and WAL hash-chain check aborted corrupted restore fail-closed.",
+      "metrics": {
+        "events_applied": 0,
+        "duplicate_events_ignored": 0,
+        "duplicate_fills_ignored": 0,
+        "uncertain_orders_detected": 0,
+        "uncertain_orders_resolved": 0,
+        "fencing_rejections": 0,
+        "stale_data_blocks": 1,
+        "corruption_detections": 1,
+        "broker_outage_blocks": 0,
+        "reconciliation_successes": 0,
+        "reconciliation_failures": 0,
+        "checkpoints_written": 0,
+        "backups_restored": 0
+      }
+    },
+    {
+      "failure_mode_id": "FM-008",
+      "scenario_key": "broker_outage",
+      "component": "broker_gateway_failover",
+      "passed": true,
+      "fail_closed_proven": true,
+      "proposed_rpo_ms": 0,
+      "measured_rpo_ms": 0,
+      "proposed_rto_ms": 15000,
+      "measured_rto_ms": 0.143,
+      "assertions": [
+        "broker_outage_blocked_unknown_state=true",
+        "outage_order_submission_blocked=true",
+        "post_outage_reconciled_gate_allowed=true"
+      ],
+      "notes": "Broker outage kept execution gate locked (fail-closed); resumption allowed only after broker reconciliation succeeded.",
+      "metrics": {
+        "events_applied": 13,
+        "duplicate_events_ignored": 13,
+        "duplicate_fills_ignored": 0,
+        "uncertain_orders_detected": 0,
+        "uncertain_orders_resolved": 0,
+        "fencing_rejections": 0,
+        "stale_data_blocks": 0,
+        "corruption_detections": 0,
+        "broker_outage_blocks": 1,
+        "reconciliation_successes": 1,
+        "reconciliation_failures": 1,
+        "checkpoints_written": 0,
+        "backups_restored": 0
+      }
+    }
+  ]
+}

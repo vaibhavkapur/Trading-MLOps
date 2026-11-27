@@ -1,0 +1,21 @@
+{
+  "inference_manifest_export_sha256": "dbec9a767ef4b6576a81d4384bc6d88c7aa9c5b828eda2cf5317228b0cf5a7f3",
+  "live_real_capital_execution_blocked_code": "EXECUTION_DISABLED_GUARD",
+  "milestone": "M3",
+  "status": "PASSED",
+  "v1_paper_deployment": "dep_bbc3e7e836817116",
+  "v1_shadow_deployment": "dep_fb71ef343d4a245c",
+  "v2_live_gated_approvals": [
+    "appr_4cabce8100dbc5fa",
+    "appr_18429f384f151546"
+  ],
+  "v2_live_gated_deployment": "dep_ab92df9bc482ee83",
+  "v2_paper_deployment": "dep_c1a41312b40c9baf",
+  "v2_shadow_comparison": {
+    "directional_disagreement_rate": 0.2,
+    "mean_abs_prediction_diff_bps": 2.909246,
+    "sample_size": 50,
+    "severity": "WARNING"
+  },
+  "v2_shadow_deployment": "dep_62ca3d974948db9b"
+}

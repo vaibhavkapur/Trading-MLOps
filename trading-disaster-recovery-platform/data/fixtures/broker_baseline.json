@@ -1,0 +1,43 @@
+{
+  "account_id": "ACCT-PAPER-01",
+  "as_of_utc": "2026-01-15T14:30:05.200Z",
+  "cash_balances_minor": {
+    "USD": 96793740
+  },
+  "positions": {
+    "AAPL": 60,
+    "MSFT": 50
+  },
+  "orders": [
+    {
+      "client_order_id": "ORD-1001",
+      "broker_order_id": "BRK-9001",
+      "symbol": "AAPL",
+      "side": "BUY",
+      "quantity": 100,
+      "filled_quantity": 100,
+      "status": "FILLED",
+      "currency": "USD"
+    },
+    {
+      "client_order_id": "ORD-1002",
+      "broker_order_id": "BRK-9002",
+      "symbol": "MSFT",
+      "side": "BUY",
+      "quantity": 50,
+      "filled_quantity": 50,
+      "status": "FILLED",
+      "currency": "USD"
+    },
+    {
+      "client_order_id": "ORD-1003",
+      "broker_order_id": "BRK-9003",
+      "symbol": "AAPL",
+      "side": "SELL",
+      "quantity": 40,
+      "filled_quantity": 40,
+      "status": "FILLED",
+      "currency": "USD"
+    }
+  ]
+}

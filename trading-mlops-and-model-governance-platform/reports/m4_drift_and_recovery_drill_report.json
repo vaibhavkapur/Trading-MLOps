@@ -1,0 +1,156 @@
+{
+  "automatic_retrain_permitted": false,
+  "drift_alert_count": 4,
+  "drift_overall_severity": "CRITICAL",
+  "drift_report_id": "drf_6e7ed8a636401e2d",
+  "governance_review": {
+    "all_deployed_lineage_complete": true,
+    "any_live_execution_enabled": false,
+    "artifacts_count": 2,
+    "audit_chain": {
+      "event_count": 27,
+      "head_hash": "91185dc9468aa08bef0dc6790c2444a85c1c1265e6b34d38df46b529121774bf",
+      "verified": true
+    },
+    "critical_drift_reports": 2,
+    "deployed_lineage_checks": [
+      {
+        "approval_count": 1,
+        "artifact_id": "art_alpha_ridge_eq_1_0_0_863c0f8c77",
+        "deployment_id": "dep_fb71ef343d4a245c",
+        "environment": "shadow",
+        "is_active": false,
+        "lineage_complete": true,
+        "order_execution_enabled": false,
+        "stage": "SHADOW"
+      },
+      {
+        "approval_count": 1,
+        "artifact_id": "art_alpha_ridge_eq_1_0_0_863c0f8c77",
+        "deployment_id": "dep_bbc3e7e836817116",
+        "environment": "paper",
+        "is_active": false,
+        "lineage_complete": true,
+        "order_execution_enabled": false,
+        "stage": "PAPER"
+      },
+      {
+        "approval_count": 1,
+        "artifact_id": "art_alpha_ridge_eq_2_0_0_96ce83a46f",
+        "deployment_id": "dep_62ca3d974948db9b",
+        "environment": "shadow",
+        "is_active": true,
+        "lineage_complete": true,
+        "order_execution_enabled": false,
+        "stage": "SHADOW"
+      },
+      {
+        "approval_count": 1,
+        "artifact_id": "art_alpha_ridge_eq_2_0_0_96ce83a46f",
+        "deployment_id": "dep_c1a41312b40c9baf",
+        "environment": "paper",
+        "is_active": false,
+        "lineage_complete": true,
+        "order_execution_enabled": false,
+        "stage": "PAPER"
+      },
+      {
+        "approval_count": 2,
+        "artifact_id": "art_alpha_ridge_eq_2_0_0_96ce83a46f",
+        "deployment_id": "dep_ab92df9bc482ee83",
+        "environment": "live_gated",
+        "is_active": true,
+        "lineage_complete": true,
+        "order_execution_enabled": false,
+        "stage": "LIVE_GATED"
+      },
+      {
+        "approval_count": 1,
+        "artifact_id": "art_alpha_ridge_eq_1_0_0_863c0f8c77",
+        "deployment_id": "dep_34c76ba1c7c7d80c",
+        "environment": "paper",
+        "is_active": true,
+        "lineage_complete": true,
+        "order_execution_enabled": false,
+        "stage": "PAPER"
+      }
+    ],
+    "deployments_count": 6,
+    "drift_reports_count": 2,
+    "experiment_runs": {
+      "failed_or_rejected": 0,
+      "succeeded": 2,
+      "total": 2
+    },
+    "reviewed_at_utc": "2026-11-27T10:17:07.875985Z",
+    "rollbacks_count": 1
+  },
+  "milestone": "M4",
+  "observability_event": {
+    "alerts": [
+      {
+        "alert_type": "FEATURE_DRIFT",
+        "auto_retrain_triggered": false,
+        "feature": "order_book_imbalance",
+        "mean_z_shift": 15.049167,
+        "psi": 7.365232,
+        "recommended_action": "FREEZE_PROMOTION_AND_EVALUATE_ROLLBACK",
+        "severity": "CRITICAL"
+      },
+      {
+        "alert_type": "FEATURE_DRIFT",
+        "auto_retrain_triggered": false,
+        "feature": "momentum_24h_bps",
+        "mean_z_shift": 15.22942,
+        "psi": 7.365232,
+        "recommended_action": "FREEZE_PROMOTION_AND_EVALUATE_ROLLBACK",
+        "severity": "CRITICAL"
+      },
+      {
+        "alert_type": "FEATURE_DRIFT",
+        "auto_retrain_triggered": false,
+        "feature": "realized_vol_24h_bps",
+        "mean_z_shift": 0.421639,
+        "psi": 0.646937,
+        "recommended_action": "FREEZE_PROMOTION_AND_EVALUATE_ROLLBACK",
+        "severity": "CRITICAL"
+      },
+      {
+        "alert_type": "PREDICTION_DRIFT",
+        "auto_retrain_triggered": false,
+        "prediction_mean_z_shift": 19.273991,
+        "recommended_action": "DISABLE_EXECUTION_AND_ROLLBACK_TO_PREVIOUS",
+        "severity": "CRITICAL"
+      }
+    ],
+    "artifact_id": "art_alpha_ridge_eq_2_0_0_96ce83a46f",
+    "environment": "paper",
+    "metrics": {
+      "alert_count": 4,
+      "max_feature_psi": 7.365232,
+      "prediction_mean_z_shift": 19.273991,
+      "sample_size": 60
+    },
+    "safe_fallback": "FREEZE_PROMOTION_AND_ROLLBACK_TO_KNOWN_GOOD",
+    "schema": "trading_observability_metric_event_v1",
+    "severity": "CRITICAL",
+    "source_service": "trading-mlops-and-model-governance-platform",
+    "timestamp_utc": "2026-11-27T10:17:07.864559Z"
+  },
+  "recommended_safe_fallback": "FREEZE_PROMOTION_AND_ROLLBACK_TO_KNOWN_GOOD",
+  "recovery_drill_rollback": {
+    "environment": "paper",
+    "executed_at_utc": "2026-11-27T10:17:07.866902Z",
+    "executed_by": "dave.release",
+    "from_artifact_id": "art_alpha_ridge_eq_2_0_0_96ce83a46f",
+    "from_deployment_id": "dep_c1a41312b40c9baf",
+    "reason": "Recovery drill triggered by CRITICAL feature PSI and prediction drift alerts.",
+    "restored_artifact_id": "art_alpha_ridge_eq_1_0_0_863c0f8c77",
+    "restored_deployment_id": "dep_34c76ba1c7c7d80c",
+    "restored_model_version": "1.0.0",
+    "rollback_id": "rbk_d50d101ae9252580",
+    "verified_integrity": true
+  },
+  "restored_active_version": "1.0.0",
+  "status": "PASSED"
+}

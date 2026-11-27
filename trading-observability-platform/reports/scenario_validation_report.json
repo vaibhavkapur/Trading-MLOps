@@ -1,0 +1,190 @@
+{
+  "all_scenarios_passed": true,
+  "generated_at_utc": "2026-11-27T10:15:13.751102Z",
+  "load_benchmark": {
+    "disclaimer": "Local deterministic synthetic benchmark only. Never infer live trading throughput or production SLA from this test.",
+    "environment": {
+      "machine": "arm64",
+      "os": "macOS-26.5.1-arm64-arm-64bit",
+      "python_version": "3.9.6"
+    },
+    "measured_at_utc": "2026-11-27T10:15:13.744317Z",
+    "measurement_status": "MEASURED_LOCAL_SYNTHETIC_BASELINE",
+    "parameters": {
+      "order_count": 200,
+      "seed": 20261127
+    },
+    "results": {
+      "cardinality_max_series": 512,
+      "cardinality_overflow_events": 0,
+      "cardinality_total_series": 31,
+      "cardinality_utilization_ratio": 0.0605,
+      "local_throughput_orders_per_sec": 3236.29,
+      "logs_emitted": 1200,
+      "orders_processed": 200,
+      "simulated_pipeline_latency_ms": {
+        "p50": 21.428,
+        "p95": 27.746,
+        "p99": 28.149
+      },
+      "spans_ingested": 1200,
+      "wall_clock_ms_per_order": 0.309,
+      "wall_clock_seconds": 0.0618
+    }
+  },
+  "passed_count": 8,
+  "scenarios": [
+    {
+      "alerts_fired": [
+        "STALE_MARKET_DATA"
+      ],
+      "evidence": {
+        "lost_feed_orders_submitted": 0,
+        "max_feed_age_after_recovery_s": 4.5,
+        "recovered_statuses": [
+          "filled",
+          "filled"
+        ],
+        "stale_feed_statuses": [
+          "halted_stale_feed",
+          "halted_stale_feed",
+          "halted_stale_feed"
+        ]
+      },
+      "name": "lost_feed",
+      "passed": true,
+      "summary": "Lost/stale market data triggered STALE_MARKET_DATA alert, halted trading safely, and recovered cleanly."
+    },
+    {
+      "alerts_fired": [
+        "OMS_QUEUE_LAG",
+        "BROKER_LATENCY_DEGRADED"
+      ],
+      "evidence": {
+        "broker_p95_ms": 434.23,
+        "orders_processed": 5,
+        "sample_broker_span_duration_ms": 424.516,
+        "services_traced": [
+          "broker",
+          "market_data",
+          "oms",
+          "portfolio",
+          "research",
+          "risk"
+        ]
+      },
+      "name": "slow_broker",
+      "passed": true,
+      "summary": "Injected broker + OMS latency triggered BROKER_LATENCY_DEGRADED and OMS_QUEUE_LAG and was localized to broker spans."
+    },
+    {
+      "alerts_fired": [
+        "CARDINALITY_BUDGET_EXCEEDED"
+      ],
+      "evidence": {
+        "dynamic_metric_series": 17,
+        "forbidden_label_rejected": true,
+        "forbidden_label_rejections": 1,
+        "max_total_series": 512,
+        "overflow_events": 684,
+        "total_series": 32
+      },
+      "name": "excessive_cardinality",
+      "passed": true,
+      "summary": "Forbidden label key rejected, 700 high-cardinality label values bounded via __overflow__, and CARDINALITY_BUDGET_EXCEEDED fired."
+    },
+    {
+      "alerts_fired": [
+        "SENSITIVE_FIELD_LEAK_ATTEMPT"
+      ],
+      "evidence": {
+        "blocked_fields_count": 41,
+        "leaks_found": [],
+        "redaction_markers_present": true,
+        "trace_services_preserved": [
+          "broker",
+          "market_data",
+          "oms",
+          "portfolio",
+          "research",
+          "risk"
+        ]
+      },
+      "name": "sensitive_field_leak",
+      "passed": true,
+      "summary": "Injected API keys, bearer tokens, account numbers, and confidential order params were 100% scrubbed while preserving full 6-service trace correlation."
+    },
+    {
+      "alerts_fired": [
+        "DELAYED_TRACE_INGESTION"
+      ],
+      "evidence": {
+        "delayed_spans": 2,
+        "max_ingest_delay_seconds": 25.0,
+        "order_id": "ORD-000001",
+        "span_count": 6
+      },
+      "name": "delayed_trace",
+      "passed": true,
+      "summary": "25s delayed broker/portfolio spans were correlated into complete 6-span order traces and flagged by DELAYED_TRACE_INGESTION."
+    },
+    {
+      "alerts_fired": [
+        "ORDER_REJECT_SPIKE"
+      ],
+      "evidence": {
+        "deduplicated_count": 9,
+        "resolved_status": "RESOLVED",
+        "routed_after_cooldown": true,
+        "routed_in_burst": 1
+      },
+      "name": "alert_duplication",
+      "passed": true,
+      "summary": "10 repeated alerts within cooldown collapsed into 1 routed incident (9 deduplicated), then re-notified cleanly after cooldown."
+    },
+    {
+      "alerts_fired": [
+        "TELEMETRY_BACKEND_UNAVAILABLE",
+        "MONITORING_HEARTBEAT_MISSING",
+        "MONITORING_HEARTBEAT_MISSING",
+        "MONITORING_HEARTBEAT_MISSING"
+      ],
+      "evidence": {
+        "fallback_channel_alerts": [
+          "TELEMETRY_BACKEND_UNAVAILABLE",
+          "MONITORING_HEARTBEAT_MISSING",
+          "MONITORING_HEARTBEAT_MISSING",
+          "MONITORING_HEARTBEAT_MISSING"
+        ],
+        "orders_completed_during_outage": 3,
+        "replayed_on_recovery": 18,
+        "spooled_during_outage": 18,
+        "stored_after_recovery": 18
+      },
+      "name": "unavailable_telemetry_backend",
+      "passed": true,
+      "summary": "Backend outage did not block paper orders; 18 spans spooled locally, independent watchdog fired out-of-band P1 alerts, and all 18 spans replayed on recovery."
+    },
+    {
+      "alerts_fired": [
+        "ORDER_REJECT_SPIKE",
+        "RECONCILIATION_DRIFT",
+        "RISK_STATE_BREACH"
+      ],
+      "evidence": {
+        "retention_prune_result": {
+          "deleted_by_age": 30,
+          "deleted_by_cap": 0,
+          "remaining_spans": 0
+        },
+        "routed_notifications_count": 8,
+        "spans_before_retention": 30
+      },
+      "name": "m3_m4_alert_policies_and_retention",
+      "passed": true,
+      "summary": "Verified ORDER_REJECT_SPIKE, RECONCILIATION_DRIFT, RISK_STATE_BREACH alerts and TTL trace retention pruning."
+    }
+  ],
+  "seed": 20261127,
+  "total_scenarios": 8
+}

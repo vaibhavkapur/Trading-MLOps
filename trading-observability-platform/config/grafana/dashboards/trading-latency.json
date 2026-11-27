@@ -1,0 +1,41 @@
+{
+  "uid": "saat-trading-latency",
+  "title": "Trading Latency & Pipeline Breakdown (Measured Baseline — Not Production SLA)",
+  "schemaVersion": 39,
+  "version": 1,
+  "editable": true,
+  "tags": ["trading", "observability", "latency"],
+  "time": {"from": "now-1h", "to": "now"},
+  "panels": [
+    {
+      "id": 1,
+      "title": "End-to-End Paper Trade Latency (p50 / p95 / p99)",
+      "type": "timeseries",
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 0},
+      "targets": [
+        {"expr": "histogram_quantile(0.50, sum(rate(trading_pipeline_end_to_end_latency_seconds_bucket[5m])) by (le))", "legendFormat": "p50"},
+        {"expr": "histogram_quantile(0.95, sum(rate(trading_pipeline_end_to_end_latency_seconds_bucket[5m])) by (le))", "legendFormat": "p95"},
+        {"expr": "histogram_quantile(0.99, sum(rate(trading_pipeline_end_to_end_latency_seconds_bucket[5m])) by (le))", "legendFormat": "p99"}
+      ]
+    },
+    {
+      "id": 2,
+      "title": "OMS Queue Lag (p95 / p99)",
+      "type": "timeseries",
+      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 0},
+      "targets": [
+        {"expr": "histogram_quantile(0.95, sum(rate(trading_oms_queue_lag_seconds_bucket[5m])) by (le))", "legendFormat": "oms p95"},
+        {"expr": "histogram_quantile(0.99, sum(rate(trading_oms_queue_lag_seconds_bucket[5m])) by (le))", "legendFormat": "oms p99"}
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Broker Ack Latency by Venue (p95)",
+      "type": "timeseries",
+      "gridPos": {"h": 8, "w": 24, "x": 0, "y": 8},
+      "targets": [
+        {"expr": "histogram_quantile(0.95, sum(rate(trading_broker_ack_latency_seconds_bucket[5m])) by (le, venue))", "legendFormat": "{{venue}} p95"}
+      ]
+    }
+  ]
+}
