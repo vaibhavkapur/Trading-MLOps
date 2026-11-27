@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+import json
+import sys
+from pathlib import Path
+
+root = Path(__file__).resolve().parents[1]
+sys.path[:0] = [str(root / "src"), str(root / "data/fixtures")]
+from scenarios import demo_records
+
+for row in demo_records(json.loads((root / "config/monitor.v1.json").read_text())):
+    print(json.dumps(row, separators=(",", ":")))

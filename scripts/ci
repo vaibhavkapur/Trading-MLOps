@@ -1,0 +1,25 @@
+#!/bin/sh
+set -eu
+umask 077
+cd "$(dirname -- "$0")/.."
+mkdir -p var/ci
+scripts/setup
+if ! scripts/validate > var/ci/tests.txt 2>&1; then
+    cat var/ci/tests.txt >&2
+    exit 1
+fi
+cat var/ci/tests.txt
+scripts/demo
+scripts/evaluate --output var/ci/evaluation.json > var/ci/summary.json
+python3 - <<'PY'
+import json
+from pathlib import Path
+expected, actual = (json.loads(Path(p).read_text()) for p in
+                    ["reports/evaluation.json", "var/ci/evaluation.json"])
+for field in ("python", "sqlite"):
+    expected.pop(field)
+    actual.pop(field)
+if expected != actual:
+    raise SystemExit("Evaluation differs from retained evidence")
+print("Reproduced the retained tuning and holdout evidence.")
+PY

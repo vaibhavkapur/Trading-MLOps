@@ -1,0 +1,4 @@
+#!/bin/sh
+set -eu
+root=$(CDPATH='' cd -- "$(dirname -- "$0")/.." && pwd)
+PYTHONPATH="$root/src" exec python3 -m drift_monitor "$@"

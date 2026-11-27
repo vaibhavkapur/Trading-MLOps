@@ -1,0 +1,10 @@
+#!/bin/sh
+set -eu
+python3 - <<'PY'
+import os
+import sqlite3
+import sys
+if os.name != "posix" or sys.version_info < (3, 9) or sqlite3.sqlite_version_info < (3, 24):
+    sys.exit("Requires POSIX, Python 3.9+ and SQLite 3.24+")
+print("Ready with Python", sys.version.split()[0], "and SQLite", sqlite3.sqlite_version)
+PY

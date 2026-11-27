@@ -1,0 +1,18 @@
+#!/bin/sh
+set -eu
+umask 077
+root=$(CDPATH='' cd -- "$(dirname -- "$0")/.." && pwd)
+cd "$root"
+mkdir -p var/demos
+out=$(mktemp -d "$root/var/demos/run.XXXXXXXX")
+export DRIFT_DB="$out/monitor.sqlite3"
+bin/drift register config/monitor.v1.json
+scripts/fixtures > "$out/events.ndjson"
+bin/drift ingest "$out/events.ndjson" --registry direction-hourly-v1
+for hour in 01 02 03 04 05 06 07 08 09 10; do
+    bin/drift tick --registry direction-hourly-v1 --as-of "2026-01-08T${hour}:00:00Z"
+done
+bin/drift review 1 acknowledged --note "Inspect the synthetic spread feed."
+bin/drift dashboard > "$out/dashboard.html"
+bin/drift metrics > "$out/drift.prom"
+printf 'Dashboard: %s/dashboard.html\nDatabase: %s\nMetrics: %s/drift.prom\n' "$out" "$DRIFT_DB" "$out"

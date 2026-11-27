@@ -1,0 +1,22 @@
+test_atomic_import_conflicts_and_watermark (tests.integration.test_workflow.Workflow) ... ok
+test_baseline_and_current_visibility (tests.integration.test_workflow.Workflow) ... ok
+test_cli_batch_failure_and_readonly (tests.integration.test_workflow.Workflow) ... ok
+test_concurrent_retry_and_restart (tests.integration.test_workflow.Workflow) ... ok
+test_reviews_authorized_and_audited (tests.integration.test_workflow.Workflow) ... ok
+test_tick_overlapping_windows_boundary_and_late_arrival (tests.integration.test_workflow.Workflow) ... ok
+test_abrupt_shift_storm_and_cooldown_expiry (tests.scenarios.test_shifts.Scenarios) ... ok
+test_degradation_and_prediction_shift (tests.scenarios.test_shifts.Scenarios) ... ok
+test_delayed_labels_recover_via_worker (tests.scenarios.test_shifts.Scenarios) ... ok
+test_gradual_shift (tests.scenarios.test_shifts.Scenarios) ... ok
+test_missing_blocks_even_large_shift (tests.scenarios.test_shifts.Scenarios) ... ok
+test_seasonality (tests.scenarios.test_shifts.Scenarios) ... ok
+test_small_sample_and_empty_window (tests.scenarios.test_shifts.Scenarios) ... ok
+test_binary_metrics_with_boundary_probabilities (tests.unit.test_core.Core) ... ok
+test_exact_ks_and_ties (tests.unit.test_core.Core) ... ok
+test_reject_invalid_policy_and_schedule (tests.unit.test_core.Core) ... ok
+test_strict_input_contract (tests.unit.test_core.Core) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 1.709s
+
+OK

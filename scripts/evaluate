@@ -1,0 +1,115 @@
+#!/usr/bin/env python3
+"""Chronological reproducible policy selection and blind synthetic holdout replay."""
+
+import argparse
+import json
+import math
+import platform
+import sqlite3
+import sys
+import tempfile
+from collections import Counter
+from contextlib import closing
+from datetime import timedelta
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path[:0] = [str(ROOT / "src"), str(ROOT / "data/fixtures")]
+from drift_monitor.contracts import digest, instant, stamp
+from drift_monitor.engine import ACTIONABLE, evaluate
+from drift_monitor.storage import connect, ingest, register
+from drift_monitor.views import evidence
+from scenarios import baseline, hour
+
+# Ordered from most to least sensitive. Select the first candidate with <= 1
+# stable flagged window and >= 90% detection of each strong tuning injection.
+CANDIDATES = {
+    "sensitive": [0.18, 0.09, 0.045, 0.09],
+    "moderate": [0.25, 0.12, 0.06, 0.12],
+    "conservative": [0.30, 0.15, 0.08, 0.15],
+    "revised": [0.30, 0.18, 0.08, 0.18],
+}
+KNOBS = ["ks_threshold", "accuracy_drop", "brier_increase", "calibration_increase"]
+
+
+def schedule():
+    for phase, counts in [("tuning", (48, 16, 16)), ("holdout", (96, 24, 24))]:
+        for case, count in zip(("stable", "abrupt", "degradation"), counts):
+            for _ in range(count):
+                yield phase, case, 1.5 if case == "abrupt" else 0
+    for case in ("prediction", "missing", "small"):
+        for _ in range(12):
+            yield "holdout", case, 0
+    for _ in range(12):
+        for shift in (0, 0.25, 0.5, 0.75, 1.0, 1.5):
+            yield "holdout", "gradual", shift
+
+
+def wilson(hits, n):
+    z = 1.96
+    p, denominator = hits/n, 1 + z*z/n
+    center = (p + z*z/(2*n))/denominator
+    radius = z * math.sqrt(p*(1-p)/n + z*z/(4*n*n))/denominator
+    return {"hits": hits, "windows": n, "rate": round(p, 5),
+            "wilson_95": [round(max(0, center - radius), 5), round(min(1, center + radius), 5)]}
+
+
+def seed_for(phase, i):
+    return (73000 if phase == "tuning" else 91000) + i
+
+
+def execute(db, cfg):
+    register(db, cfg)
+    name, anchor = cfg["registry_id"], instant(cfg["baseline_end"])
+    ingest(db, name, baseline(cfg))
+    cases = list(schedule())
+    for i, (phase, case, strength) in enumerate(cases):
+        ingest(db, name, hour(anchor + timedelta(hours=i), seed_for(phase, i), case, strength,
+                              count=12 if case == "small" else 80))
+    tuning = {k: Counter() for k in CANDIDATES}
+    raw = []
+    totals, successes = Counter(), Counter()
+    for i, (phase, case, strength) in enumerate(cases):
+        end = anchor + timedelta(hours=i + 1)
+        run = evidence(db, evaluate(db, name, stamp(end), stamp(end + timedelta(hours=1))))
+        checks = run["strata"][0]["checks"]
+        dist = {c["signal"]: round(c["value"], 8) for c in checks if "value" in c}
+        perf = {c["signal"]: round(c["deterioration"], 8) for c in checks if "deterioration" in c}
+        flagged = [c["signal"] for c in checks if c["status"] in ACTIONABLE]
+        raw.append(dict(phase=phase, case=case, shift=strength, end=stamp(end), seed=seed_for(phase, i),
+                        run_id=run["run_id"], ks=dist, deterioration=perf, flags=flagged,
+                        decisions=run["decisions"], statuses=sorted({c["status"] for c in checks})))
+        if phase == "tuning":
+            for key, (ks, accuracy, brier, calibration) in CANDIDATES.items():
+                perf_hit = any(perf[k] >= limit for k, limit in
+                               [("accuracy", accuracy), ("brier", brier), ("calibration", calibration)])
+                hit = {"stable": max(dist.values()) >= ks or perf_hit, "degradation": perf_hit,
+                       "abrupt": dist["ks.feature.momentum"] >= ks}[case]
+                tuning[key][case] += int(hit)
+            continue
+        group = case if case != "gradual" else f"gradual_{strength:.2f}"
+        hit = {"stable": bool(flagged), "abrupt": "ks.feature.momentum" in flagged,
+               "gradual": "ks.feature.momentum" in flagged, "degradation": any(k in flagged for k in perf),
+               "prediction": "ks.prediction" in flagged, "missing": "missing.feature.spread" in flagged,
+               "small": any(c["status"] == "inconclusive" for c in checks)}[case]
+        totals[group] += 1
+        successes[group] += int(hit)
+    selected = next((k for k, v in tuning.items() if v["stable"] <= 1 and v["abrupt"] >= 15
+                     and v["degradation"] >= 15), None)
+    return dict(schema_version=1, python=platform.python_version(), sqlite=sqlite3.sqlite_version,
+                config_sha256=digest(cfg), tuning_candidates=CANDIDATES, tuning_knobs=KNOBS,
+                tuning_flagged=tuning, selected_candidate=selected,
+                matches_config=bool(selected and CANDIDATES[selected] == [cfg[k] for k in KNOBS]),
+                holdout={k: wilson(successes[k], n) for k,n in totals.items()}, windows=raw)
+
+
+if __name__ == "__main__":
+    cli = argparse.ArgumentParser(description=__doc__)
+    cli.add_argument("--output", type=Path, required=True)
+    args = cli.parse_args()
+    cfg = json.loads((ROOT / "config/monitor.v1.json").read_text())
+    with tempfile.TemporaryDirectory() as tmp, closing(connect(Path(tmp)/"db")) as db:
+        result = execute(db, cfg)
+    args.output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n")
+    print(json.dumps({k: v for k,v in result.items() if k not in ("windows",)}, indent=2))
+    sys.exit(0 if result["matches_config"] else 1)

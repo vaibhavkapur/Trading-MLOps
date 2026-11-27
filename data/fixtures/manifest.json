@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "generator": "scenarios.py",
+  "source": "Original synthetic observations generated locally with Python random.Random",
+  "units": {"momentum": "standardized score", "spread": "basis points", "probability": "fraction"},
+  "target": "synthetic positive outcome over 10 minutes",
+  "entitlement": "Generated for this prototype. No third-party market data or personal repository assets.",
+  "baseline_seed": "49000 plus chronological hour index",
+  "demo_seed": "84000 plus chronological hour index",
+  "scenario_parameters": "See hour() and demo_records() in the generator."
+}
